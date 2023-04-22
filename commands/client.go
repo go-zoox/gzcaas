@@ -2,6 +2,7 @@ package commands
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/go-zoox/cli"
 	"github.com/go-zoox/commands-as-a-service/client"
@@ -38,14 +39,21 @@ func RegistryClient(app *cli.MultipleProgram) {
 			},
 			//
 			&cli.StringFlag{
-				Name:    "script-path",
+				Name:    "scriptfile",
 				Usage:   "specify command script path",
-				EnvVars: []string{"CAAS_SCRIPT_PATH"},
+				EnvVars: []string{"CAAS_SCRIPT_FILE"},
+			},
+			&cli.StringFlag{
+				Name:    "envfile",
+				Usage:   "specify command envfile file path",
+				EnvVars: []string{"CAAS_ENV_FILE"},
 			},
 		},
 		Action: func(ctx *cli.Context) (err error) {
 			script := ctx.String("script")
-			if scriptPath := ctx.String("script-path"); scriptPath != "" {
+			environment := map[string]string{}
+
+			if scriptPath := ctx.String("scriptfile"); scriptPath != "" {
 				if ok := fs.IsExist(scriptPath); !ok {
 					return fmt.Errorf("script path not found: %s", scriptPath)
 				}
@@ -57,6 +65,34 @@ func RegistryClient(app *cli.MultipleProgram) {
 				}
 			}
 
+			if envfilePath := ctx.String("envfile"); envfilePath != "" {
+				if ok := fs.IsExist(envfilePath); !ok {
+					return fmt.Errorf("envfile path not found: %s", envfilePath)
+				}
+
+				lines, err := fs.ReadFileLines(envfilePath)
+				if err != nil {
+					return fmt.Errorf("failed to read envfile: %s", err)
+				}
+
+				for _, line := range lines {
+					if line == "" {
+						continue
+					}
+
+					if line[0] == '#' {
+						continue
+					}
+
+					parts := strings.SplitN(line, "=", 2)
+					if len(parts) != 2 {
+						return fmt.Errorf("invalid envfile line: %s", line)
+					}
+
+					environment[parts[0]] = parts[1]
+				}
+			}
+
 			if script == "" {
 				return fmt.Errorf("script is required")
 			}
@@ -65,6 +101,7 @@ func RegistryClient(app *cli.MultipleProgram) {
 				New(&client.Config{
 					Server:       ctx.String("server"),
 					Script:       script,
+					Environment:  environment,
 					ClientID:     ctx.String("client-id"),
 					ClientSecret: ctx.String("client-secret"),
 				}).
