@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/go-zoox/cli v1.2.1
-	github.com/go-zoox/commands-as-a-service v1.0.4
+	github.com/go-zoox/commands-as-a-service v1.2.0
 	github.com/go-zoox/fs v1.3.11
 )
 
@@ -61,4 +61,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/go-zoox/commands-as-a-service => ../commands-as-a-service
+// replace github.com/go-zoox/commands-as-a-service => ../commands-as-a-service
