@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/go-zoox/cli v1.2.1
-	github.com/go-zoox/commands-as-a-service v1.2.0
+	github.com/go-zoox/commands-as-a-service v1.2.1
 	github.com/go-zoox/fs v1.3.11
 )
 
@@ -41,7 +41,7 @@ require (
 	github.com/go-zoox/session v1.0.6 // indirect
 	github.com/go-zoox/tag v1.2.0 // indirect
 	github.com/go-zoox/uuid v0.0.1 // indirect
-	github.com/go-zoox/zoox v1.9.6 // indirect
+	github.com/go-zoox/zoox v1.9.7 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/gorilla/websocket v1.5.0 // indirect
 	github.com/joho/godotenv v1.5.1 // indirect
