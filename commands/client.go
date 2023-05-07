@@ -16,11 +16,11 @@ func RegistryClient(app *cli.MultipleProgram) {
 		Usage: "commands as a service client",
 		Flags: []cli.Flag{
 			&cli.StringFlag{
-				Name:     "server",
-				Usage:    "server url",
-				Aliases:  []string{"s"},
-				EnvVars:  []string{"CAAS_SERVER"},
-				Required: true,
+				Name:    "server",
+				Usage:   "server url",
+				Aliases: []string{"s"},
+				EnvVars: []string{"CAAS_SERVER"},
+				// Required: true,
 			},
 			&cli.StringFlag{
 				Name:    "script",
@@ -51,6 +51,23 @@ func RegistryClient(app *cli.MultipleProgram) {
 			},
 		},
 		Action: func(ctx *cli.Context) (err error) {
+			cfg := &client.Config{}
+			if err := cli.LoadConfig(ctx, cfg); err != nil {
+				return fmt.Errorf("failed to load config file: %v", err)
+			}
+
+			if ctx.String("server") != "" {
+				cfg.Server = ctx.String("server")
+			}
+
+			if ctx.String("client-id") != "" {
+				cfg.ClientID = ctx.String("client-id")
+			}
+
+			if ctx.String("client-secret") != "" {
+				cfg.ClientSecret = ctx.String("client-secret")
+			}
+
 			script := ctx.String("script")
 			environment := map[string]string{}
 
@@ -98,13 +115,7 @@ func RegistryClient(app *cli.MultipleProgram) {
 				return fmt.Errorf("script is required")
 			}
 
-			c := client.
-				New(&client.Config{
-					Server:       ctx.String("server"),
-					ClientID:     ctx.String("client-id"),
-					ClientSecret: ctx.String("client-secret"),
-				})
-
+			c := client.New(cfg)
 			if err := c.Connect(); err != nil {
 				return fmt.Errorf("failed to connect to server: %s", err)
 			}

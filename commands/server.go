@@ -1,6 +1,8 @@
 package commands
 
 import (
+	"fmt"
+
 	"github.com/go-zoox/cli"
 	"github.com/go-zoox/commands-as-a-service/server"
 )
@@ -15,7 +17,7 @@ func RegistryServer(app *cli.MultipleProgram) {
 				Usage:   "server port",
 				Aliases: []string{"p"},
 				EnvVars: []string{"PORT"},
-				Value:   8838,
+				// Value:   8838,
 			},
 			&cli.StringFlag{
 				Name:    "shell",
@@ -56,15 +58,37 @@ func RegistryServer(app *cli.MultipleProgram) {
 			},
 		},
 		Action: func(ctx *cli.Context) (err error) {
+			cfg := &server.Config{}
+			if err := cli.LoadConfig(ctx, cfg); err != nil {
+				return fmt.Errorf("failed to load config file: %v", err)
+			}
+
+			if ctx.Int64("port") != 0 {
+				cfg.Port = ctx.Int64("port")
+			}
+
+			if ctx.String("shell") != "" {
+				cfg.Shell = ctx.String("shell")
+			}
+
+			if ctx.String("workdir") != "" {
+				cfg.WorkDir = ctx.String("workdir")
+			}
+
+			if ctx.Int64("timeout") != 0 {
+				cfg.Timeout = ctx.Int64("timeout")
+			}
+
+			if ctx.String("client-id") != "" {
+				cfg.ClientID = ctx.String("client-id")
+			}
+
+			if ctx.String("client-secret") != "" {
+				cfg.ClientSecret = ctx.String("client-secret")
+			}
+
 			return server.
-				New(&server.Config{
-					Port:         ctx.Int64("port"),
-					Shell:        ctx.String("shell"),
-					WorkDir:      ctx.String("workdir"),
-					Timeout:      ctx.Int64("timeout"),
-					ClientID:     ctx.String("client-id"),
-					ClientSecret: ctx.String("client-secret"),
-				}).
+				New(cfg).
 				Run()
 		},
 	})
