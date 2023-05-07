@@ -7,6 +7,7 @@ import (
 	"github.com/go-zoox/cli"
 	"github.com/go-zoox/commands-as-a-service/client"
 	"github.com/go-zoox/commands-as-a-service/entities"
+	"github.com/go-zoox/core-utils/regexp"
 	"github.com/go-zoox/fs"
 )
 
@@ -16,11 +17,11 @@ func RegistryClient(app *cli.MultipleProgram) {
 		Usage: "commands as a service client",
 		Flags: []cli.Flag{
 			&cli.StringFlag{
-				Name:    "server",
-				Usage:   "server url",
-				Aliases: []string{"s"},
-				EnvVars: []string{"CAAS_SERVER"},
-				// Required: true,
+				Name:     "server",
+				Usage:    "server url",
+				Aliases:  []string{"s"},
+				EnvVars:  []string{"CAAS_SERVER"},
+				Required: true,
 			},
 			&cli.StringFlag{
 				Name:    "script",
@@ -66,6 +67,14 @@ func RegistryClient(app *cli.MultipleProgram) {
 
 			if ctx.String("client-secret") != "" {
 				cfg.ClientSecret = ctx.String("client-secret")
+			}
+
+			// host only
+			if regexp.Match("^\\d+\\.\\d+\\.\\d+\\.\\d+$", cfg.Server) {
+				cfg.Server = fmt.Sprintf("ws://%s:8838", cfg.Server)
+			} else if regexp.Match("^\\d+\\.\\d+\\.\\d+\\.\\d+:\\d+$", cfg.Server) {
+				// host:port
+				cfg.Server = fmt.Sprintf("ws://%s", cfg.Server)
 			}
 
 			script := ctx.String("script")
