@@ -69,12 +69,19 @@ func RegistryClient(app *cli.MultipleProgram) {
 				cfg.ClientSecret = ctx.String("client-secret")
 			}
 
-			// host only
-			if regexp.Match("^\\d+\\.\\d+\\.\\d+\\.\\d+$", cfg.Server) {
-				cfg.Server = fmt.Sprintf("ws://%s:8838", cfg.Server)
-			} else if regexp.Match("^\\d+\\.\\d+\\.\\d+\\.\\d+:\\d+$", cfg.Server) {
-				// host:port
+			// add scheme
+			if !regexp.Match("^wss?://", cfg.Server) {
 				cfg.Server = fmt.Sprintf("ws://%s", cfg.Server)
+			}
+
+			// add port
+			if !regexp.Match(":\\d+$", cfg.Server) {
+				// host:port
+				cfg.Server = fmt.Sprintf("%s:8838", cfg.Server)
+			}
+
+			if !regexp.Match("^ws://[^:]+:\\d+", cfg.Server) {
+				return fmt.Errorf("invalid gzcaas server: %s", cfg.Server)
 			}
 
 			script := ctx.String("script")

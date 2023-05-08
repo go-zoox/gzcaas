@@ -5,6 +5,7 @@ go 1.20
 require (
 	github.com/go-zoox/cli v1.2.4
 	github.com/go-zoox/commands-as-a-service v1.3.2
+	github.com/go-zoox/core-utils v1.2.9
 	github.com/go-zoox/fs v1.3.13
 )
 
@@ -20,7 +21,6 @@ require (
 	github.com/go-zoox/compress v1.0.1 // indirect
 	github.com/go-zoox/config v1.2.10 // indirect
 	github.com/go-zoox/cookie v1.0.2 // indirect
-	github.com/go-zoox/core-utils v1.2.9 // indirect
 	github.com/go-zoox/counter v1.2.0 // indirect
 	github.com/go-zoox/cron v1.1.2 // indirect
 	github.com/go-zoox/crypto v1.1.8 // indirect
