@@ -56,6 +56,12 @@ func RegistryServer(app *cli.MultipleProgram) {
 				EnvVars: []string{"CAAS_TIMEOUT"},
 				Value:   1800,
 			},
+			&cli.BoolFlag{
+				Name:    "daemon",
+				Usage:   "Run as a daemon",
+				Aliases: []string{"d"},
+				EnvVars: []string{"CAAS_DAEMON"},
+			},
 		},
 		Action: func(ctx *cli.Context) (err error) {
 			cfg := &server.Config{}
@@ -85,6 +91,14 @@ func RegistryServer(app *cli.MultipleProgram) {
 
 			if ctx.String("client-secret") != "" {
 				cfg.ClientSecret = ctx.String("client-secret")
+			}
+
+			if ctx.Bool("daemon") {
+				return cli.Daemon(ctx, func() error {
+					return server.
+						New(cfg).
+						Run()
+				})
 			}
 
 			return server.

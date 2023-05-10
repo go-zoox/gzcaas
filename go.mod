@@ -3,7 +3,7 @@ module github.com/go-zoox/gzcaas
 go 1.20
 
 require (
-	github.com/go-zoox/cli v1.2.4
+	github.com/go-zoox/cli v1.3.1
 	github.com/go-zoox/commands-as-a-service v1.3.2
 	github.com/go-zoox/core-utils v1.2.9
 	github.com/go-zoox/fs v1.3.13
@@ -49,12 +49,14 @@ require (
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/gorilla/websocket v1.5.0 // indirect
 	github.com/joho/godotenv v1.5.1 // indirect
+	github.com/kardianos/osext v0.0.0-20190222173326-2bc1f35cddc0 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.17 // indirect
 	github.com/pelletier/go-toml v1.9.5 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/robfig/cron/v3 v3.0.1 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
+	github.com/sevlyar/go-daemon v0.1.6 // indirect
 	github.com/spf13/cast v1.5.0 // indirect
 	github.com/tidwall/gjson v1.14.4 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
@@ -70,3 +72,4 @@ require (
 )
 
 // replace github.com/go-zoox/commands-as-a-service => ../commands-as-a-service
+// replace github.com/go-zoox/cli => ../cli
