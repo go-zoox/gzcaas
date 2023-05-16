@@ -101,6 +101,10 @@ func RegistryServer(app *cli.MultipleProgram) {
 				})
 			}
 
+			if cfg.Port == 0 {
+				cfg.Port = 8838
+			}
+
 			return server.
 				New(cfg).
 				Run()
