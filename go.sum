@@ -39,8 +39,8 @@ github.com/go-zoox/cache v1.0.2/go.mod h1:E+rxSaCqW0o/fM5KQSueJlEcUZQ9x3penrSMh8
 github.com/go-zoox/chalk v1.0.1/go.mod h1:z5+qvE9nEJI5uT4px2tyoFa/xxkqf3CUo22KmXLKbNI=
 github.com/go-zoox/chalk v1.0.2 h1:DCWft37fogmvqF37JdbGSLg28L/tQeA8u0lMvb62KOg=
 github.com/go-zoox/chalk v1.0.2/go.mod h1:z5+qvE9nEJI5uT4px2tyoFa/xxkqf3CUo22KmXLKbNI=
-github.com/go-zoox/cli v1.3.1 h1:DIEwZ/fz33Tn95s0pHaMEmxYVIg50jHZdrEpdV+6i8k=
-github.com/go-zoox/cli v1.3.1/go.mod h1:25ox3mVRJdRSyLJLvK8OHYEuXtMtfkTseWkJjlK9kM4=
+github.com/go-zoox/cli v1.3.2 h1:m0+lQ5KIx3ucJTBHoXWOGRiEnrLeEUmBbbLrdTCqHVs=
+github.com/go-zoox/cli v1.3.2/go.mod h1:25ox3mVRJdRSyLJLvK8OHYEuXtMtfkTseWkJjlK9kM4=
 github.com/go-zoox/commands-as-a-service v1.3.3 h1:1gmT8vnmgDBAMA2tjvSuAgX2zrqZqQSsxptH6kHc9Cg=
 github.com/go-zoox/commands-as-a-service v1.3.3/go.mod h1:6+uO49PdCxLb8jWiFTNDuz9TbI4VlTGk0u6FqFPnr6k=
 github.com/go-zoox/compress v1.0.1 h1:EyNxo5NscMLua5fvUdiGSF+BwhuTfMeyppu7OwKAW7Q=
