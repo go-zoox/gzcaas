@@ -9,6 +9,7 @@ import (
 	"github.com/go-zoox/commands-as-a-service/entities"
 	"github.com/go-zoox/core-utils/regexp"
 	"github.com/go-zoox/fs"
+	"github.com/go-zoox/logger"
 )
 
 func RegistryClient(app *cli.MultipleProgram) {
@@ -17,11 +18,12 @@ func RegistryClient(app *cli.MultipleProgram) {
 		Usage: "commands as a service client",
 		Flags: []cli.Flag{
 			&cli.StringFlag{
-				Name:     "server",
-				Usage:    "server url",
-				Aliases:  []string{"s"},
-				EnvVars:  []string{"CAAS_SERVER"},
-				Required: true,
+				Name:    "server",
+				Usage:   "server url",
+				Aliases: []string{"s"},
+				EnvVars: []string{"CAAS_SERVER"},
+				// Required: true,
+				Value: "127.0.0.1",
 			},
 			&cli.StringFlag{
 				Name:    "script",
@@ -131,9 +133,36 @@ func RegistryClient(app *cli.MultipleProgram) {
 				return fmt.Errorf("script is required")
 			}
 
+			// i := 0
+			// for {
+			// 	i += 1
+			// 	if i >= 10 {
+			// 		break
+			// 	}
+
+			// 	go func() {
+			// 		fmt.Println("adasdad: ", i)
+
+			// 		c := client.New(cfg)
+			// 		if err := c.Connect(); err != nil {
+			// 			logger.Errorf("failed to connect to server: %s", err)
+			// 			// return fmt.Errorf("server is not running (server: %s)", ctx.String("server"))
+			// 		}
+
+			// 		c.Exec(&entities.Command{
+			// 			Script:      script,
+			// 			Environment: environment,
+			// 		})
+			// 	}()
+			// }
+
+			// time.Sleep(5 * time.Second)
+			// return
+
 			c := client.New(cfg)
 			if err := c.Connect(); err != nil {
-				return fmt.Errorf("failed to connect to server: %s", err)
+				logger.Debugf("failed to connect to server: %s", err)
+				return fmt.Errorf("server(%s) is not running", ctx.String("server"))
 			}
 
 			return c.Exec(&entities.Command{
