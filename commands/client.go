@@ -54,12 +54,13 @@ func RegistryClient(app *cli.MultipleProgram) {
 			},
 		},
 		Action: func(ctx *cli.Context) (err error) {
-			cfg := &client.Config{
-				AutoExit: true,
-			}
+			cfg := &client.Config{}
 			if err := cli.LoadConfig(ctx, cfg); err != nil {
 				return fmt.Errorf("failed to load config file: %v", err)
 			}
+
+			// fix auto exit
+			cfg.AutoExit = true
 
 			if ctx.String("server") != "" {
 				cfg.Server = ctx.String("server")
