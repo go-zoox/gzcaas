@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/go-zoox/cli v1.3.2
-	github.com/go-zoox/commands-as-a-service v1.3.8
+	github.com/go-zoox/commands-as-a-service v1.3.9
 	github.com/go-zoox/core-utils v1.2.9
 	github.com/go-zoox/fs v1.3.13
 	github.com/go-zoox/logger v1.4.4
@@ -17,11 +17,11 @@ require (
 	github.com/fatih/color v1.13.0 // indirect
 	github.com/fsnotify/fsnotify v1.6.0 // indirect
 	github.com/go-redis/redis/v8 v8.11.5 // indirect
-	github.com/go-zoox/cache v1.0.2 // indirect
+	github.com/go-zoox/cache v1.0.3 // indirect
 	github.com/go-zoox/chalk v1.0.2 // indirect
 	github.com/go-zoox/compress v1.0.1 // indirect
 	github.com/go-zoox/config v1.2.10 // indirect
-	github.com/go-zoox/cookie v1.0.2 // indirect
+	github.com/go-zoox/cookie v1.2.0 // indirect
 	github.com/go-zoox/counter v1.2.0 // indirect
 	github.com/go-zoox/cron v1.1.2 // indirect
 	github.com/go-zoox/crypto v1.1.8 // indirect
@@ -41,10 +41,10 @@ require (
 	github.com/go-zoox/random v1.0.3 // indirect
 	github.com/go-zoox/ratelimit v1.2.0 // indirect
 	github.com/go-zoox/safe v1.0.1 // indirect
-	github.com/go-zoox/session v1.0.6 // indirect
+	github.com/go-zoox/session v1.2.0 // indirect
 	github.com/go-zoox/tag v1.2.2 // indirect
 	github.com/go-zoox/uuid v0.0.1 // indirect
-	github.com/go-zoox/zoox v1.9.13 // indirect
+	github.com/go-zoox/zoox v1.10.6 // indirect
 	github.com/goccy/go-yaml v1.9.8 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/gorilla/websocket v1.5.0 // indirect
