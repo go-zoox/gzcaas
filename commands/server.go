@@ -93,16 +93,16 @@ func RegistryServer(app *cli.MultipleProgram) {
 				cfg.ClientSecret = ctx.String("client-secret")
 			}
 
+			if cfg.Port == 0 {
+				cfg.Port = 8838
+			}
+
 			if ctx.Bool("daemon") {
 				return cli.Daemon(ctx, func() error {
 					return server.
 						New(cfg).
 						Run()
 				})
-			}
-
-			if cfg.Port == 0 {
-				cfg.Port = 8838
 			}
 
 			return server.
