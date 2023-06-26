@@ -8,6 +8,7 @@ import (
 	"github.com/go-zoox/commands-as-a-service/client"
 	"github.com/go-zoox/commands-as-a-service/entities"
 	"github.com/go-zoox/core-utils/regexp"
+	"github.com/go-zoox/fetch"
 	"github.com/go-zoox/fs"
 	"github.com/go-zoox/logger"
 )
@@ -93,26 +94,48 @@ func RegistryClient(app *cli.MultipleProgram) {
 			environment := map[string]string{}
 
 			if scriptPath := ctx.String("scriptfile"); scriptPath != "" {
-				if ok := fs.IsExist(scriptPath); !ok {
-					return fmt.Errorf("script path not found: %s", scriptPath)
-				}
+				if regexp.Match("^https?://", scriptPath) {
+					response, err := fetch.Get(scriptPath)
+					if err != nil {
+						return fmt.Errorf("failed to fetch script file: %s", err)
+					}
 
-				if scriptText, err := fs.ReadFileAsString(scriptPath); err != nil {
-					return fmt.Errorf("failed to read script file: %s", err)
+					script = response.String()
 				} else {
-					script = scriptText
+					if ok := fs.IsExist(scriptPath); !ok {
+						return fmt.Errorf("script path not found: %s", scriptPath)
+					}
+
+					if scriptText, err := fs.ReadFileAsString(scriptPath); err != nil {
+						return fmt.Errorf("failed to read script file: %s", err)
+					} else {
+						script = scriptText
+					}
 				}
 			}
 
 			if envfilePath := ctx.String("envfile"); envfilePath != "" {
-				if ok := fs.IsExist(envfilePath); !ok {
-					return fmt.Errorf("envfile path not found: %s", envfilePath)
+				envText := ""
+				if regexp.Match("^https?://", envfilePath) {
+					response, err := fetch.Get(envfilePath)
+					if err != nil {
+						return fmt.Errorf("failed to fetch script file: %s", err)
+					}
+
+					envText = response.String()
+				} else {
+					if ok := fs.IsExist(envfilePath); !ok {
+						return fmt.Errorf("envfile path not found: %s", envfilePath)
+					}
+
+					if envTextX, err := fs.ReadFileAsString(envfilePath); err != nil {
+						return fmt.Errorf("failed to read script file: %s", err)
+					} else {
+						envText = envTextX
+					}
 				}
 
-				lines, err := fs.ReadFileLines(envfilePath)
-				if err != nil {
-					return fmt.Errorf("failed to read envfile: %s", err)
-				}
+				lines := strings.Split(envText, "\n")
 
 				for _, line := range lines {
 					if line == "" {
