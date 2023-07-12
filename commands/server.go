@@ -62,6 +62,11 @@ func RegistryServer(app *cli.MultipleProgram) {
 				Aliases: []string{"d"},
 				EnvVars: []string{"CAAS_DAEMON"},
 			},
+			&cli.BoolFlag{
+				Name:    "auto-clean-user-workdir",
+				Usage:   "Auto clean user workdir, default: false",
+				EnvVars: []string{"CAAS_AUTO_CLEAN_USER_WORKDIR"},
+			},
 		},
 		Action: func(ctx *cli.Context) (err error) {
 			cfg := &server.Config{}
@@ -91,6 +96,10 @@ func RegistryServer(app *cli.MultipleProgram) {
 
 			if ctx.String("client-secret") != "" {
 				cfg.ClientSecret = ctx.String("client-secret")
+			}
+
+			if ctx.Bool("auto-clean-user-workdir") {
+				cfg.IsAutoCleanUserWorkDir = ctx.Bool("auto-clean-user-workdir")
 			}
 
 			if cfg.Port == 0 {
