@@ -29,7 +29,7 @@ func RegistryServer(app *cli.MultipleProgram) {
 			&cli.StringFlag{
 				Name:    "workdir",
 				Usage:   "specify command workdir",
-				Aliases: []string{"c"},
+				Aliases: []string{"w"},
 				EnvVars: []string{"CAAS_WORKDIR"},
 				Value:   "/tmp/gzcaas",
 			},
