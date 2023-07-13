@@ -157,32 +157,6 @@ func RegistryClient(app *cli.MultipleProgram) {
 				return fmt.Errorf("script is required")
 			}
 
-			// i := 0
-			// for {
-			// 	i += 1
-			// 	if i >= 10 {
-			// 		break
-			// 	}
-
-			// 	go func() {
-			// 		fmt.Println("adasdad: ", i)
-
-			// 		c := client.New(cfg)
-			// 		if err := c.Connect(); err != nil {
-			// 			logger.Errorf("failed to connect to server: %s", err)
-			// 			// return fmt.Errorf("server is not running (server: %s)", ctx.String("server"))
-			// 		}
-
-			// 		c.Exec(&entities.Command{
-			// 			Script:      script,
-			// 			Environment: environment,
-			// 		})
-			// 	}()
-			// }
-
-			// time.Sleep(5 * time.Second)
-			// return
-
 			c := client.New(cfg)
 			if err := c.Connect(); err != nil {
 				logger.Debugf("failed to connect to server: %s", err)
