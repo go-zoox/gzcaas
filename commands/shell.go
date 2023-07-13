@@ -1,6 +1,7 @@
 package commands
 
 import (
+	"bufio"
 	"fmt"
 	"os"
 	"strings"
@@ -14,10 +15,10 @@ import (
 	"github.com/go-zoox/logger"
 )
 
-func RegistryClient(app *cli.MultipleProgram) {
-	app.Register("client", &cli.Command{
-		Name:  "client",
-		Usage: "commands as a service client",
+func RegistryShell(app *cli.MultipleProgram) {
+	app.Register("shell", &cli.Command{
+		Name:  "shell",
+		Usage: "commands as a service shell",
 		Flags: []cli.Flag{
 			&cli.StringFlag{
 				Name:    "server",
@@ -44,11 +45,6 @@ func RegistryClient(app *cli.MultipleProgram) {
 				EnvVars: []string{"CAAS_CLIENT_SECRET"},
 			},
 			//
-			&cli.StringFlag{
-				Name:    "scriptfile",
-				Usage:   "specify command script path",
-				EnvVars: []string{"CAAS_SCRIPT_FILE"},
-			},
 			&cli.StringFlag{
 				Name:    "envfile",
 				Usage:   "specify command envfile file path",
@@ -88,29 +84,7 @@ func RegistryClient(app *cli.MultipleProgram) {
 				return fmt.Errorf("invalid gzcaas server: %s", cfg.Server)
 			}
 
-			script := ctx.String("script")
 			environment := map[string]string{}
-
-			if scriptPath := ctx.String("scriptfile"); scriptPath != "" {
-				if regexp.Match("^https?://", scriptPath) {
-					response, err := fetch.Get(scriptPath)
-					if err != nil {
-						return fmt.Errorf("failed to fetch script file: %s", err)
-					}
-
-					script = response.String()
-				} else {
-					if ok := fs.IsExist(scriptPath); !ok {
-						return fmt.Errorf("script path not found: %s", scriptPath)
-					}
-
-					if scriptText, err := fs.ReadFileAsString(scriptPath); err != nil {
-						return fmt.Errorf("failed to read script file: %s", err)
-					} else {
-						script = scriptText
-					}
-				}
-			}
 
 			if envfilePath := ctx.String("envfile"); envfilePath != "" {
 				envText := ""
@@ -153,52 +127,31 @@ func RegistryClient(app *cli.MultipleProgram) {
 				}
 			}
 
-			if script == "" {
-				return fmt.Errorf("script is required")
-			}
-
-			// i := 0
-			// for {
-			// 	i += 1
-			// 	if i >= 10 {
-			// 		break
-			// 	}
-
-			// 	go func() {
-			// 		fmt.Println("adasdad: ", i)
-
-			// 		c := client.New(cfg)
-			// 		if err := c.Connect(); err != nil {
-			// 			logger.Errorf("failed to connect to server: %s", err)
-			// 			// return fmt.Errorf("server is not running (server: %s)", ctx.String("server"))
-			// 		}
-
-			// 		c.Exec(&entities.Command{
-			// 			Script:      script,
-			// 			Environment: environment,
-			// 		})
-			// 	}()
-			// }
-
-			// time.Sleep(5 * time.Second)
-			// return
-
 			c := client.New(cfg)
 			if err := c.Connect(); err != nil {
 				logger.Debugf("failed to connect to server: %s", err)
 				return fmt.Errorf("server(%s) is not running", ctx.String("server"))
 			}
 
-			err = c.Exec(&entities.Command{
-				Script:      script,
-				Environment: environment,
-			})
-			if errx, ok := err.(*client.ExitError); ok {
-				os.Exit(errx.ExitCode)
-				return
+			runCommand := func(cmd string) error {
+				return c.Exec(&entities.Command{
+					Script:      cmd,
+					Environment: environment,
+				})
 			}
 
-			return err
+			reader := bufio.NewReader(os.Stdin)
+			for {
+				fmt.Print("$ ")
+				cmdString, err := reader.ReadString('\n')
+				if err != nil {
+					fmt.Fprintln(os.Stderr, err)
+				}
+				err = runCommand(cmdString)
+				if err != nil {
+					fmt.Fprintln(os.Stderr, err)
+				}
+			}
 		},
 	})
 }

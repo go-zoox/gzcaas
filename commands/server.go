@@ -51,10 +51,10 @@ func RegistryServer(app *cli.MultipleProgram) {
 			},
 			&cli.Int64Flag{
 				Name:    "timeout",
-				Usage:   "specify command timeout, in seconds, default: 1800 (30 minutes)",
+				Usage:   "specify command timeout, in seconds, default: 86400 (1d)",
 				Aliases: []string{"t"},
 				EnvVars: []string{"CAAS_TIMEOUT"},
-				Value:   1800,
+				Value:   86400,
 			},
 			&cli.BoolFlag{
 				Name:    "daemon",
