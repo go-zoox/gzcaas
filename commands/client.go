@@ -186,7 +186,7 @@ func RegistryClient(app *cli.MultipleProgram) {
 			c := client.New(cfg)
 			if err := c.Connect(); err != nil {
 				logger.Debugf("failed to connect to server: %s", err)
-				return fmt.Errorf("server(%s) is not running", ctx.String("server"))
+				return fmt.Errorf("failed to connect server(%s)", ctx.String("server"))
 			}
 
 			err = c.Exec(&entities.Command{
