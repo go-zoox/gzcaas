@@ -54,6 +54,11 @@ func RegistryClient(app *cli.MultipleProgram) {
 				Usage:   "specify command envfile file path",
 				EnvVars: []string{"CAAS_ENV_FILE"},
 			},
+			&cli.StringFlag{
+				Name:    "job-id",
+				Usage:   "specify job id",
+				EnvVars: []string{"CAAS_JOB_ID"},
+			},
 		},
 		Action: func(ctx *cli.Context) (err error) {
 			cfg := &client.Config{}
@@ -164,6 +169,7 @@ func RegistryClient(app *cli.MultipleProgram) {
 			}
 
 			err = c.Exec(&entities.Command{
+				ID:          ctx.String("job-id"),
 				Script:      script,
 				Environment: environment,
 			})
