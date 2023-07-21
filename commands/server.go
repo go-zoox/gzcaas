@@ -27,11 +27,17 @@ func RegistryServer(app *cli.MultipleProgram) {
 				Value:   "sh",
 			},
 			&cli.StringFlag{
+				Name:    "metadata-dir",
+				Usage:   "specify command metadata dir",
+				EnvVars: []string{"CAAS_METADATA_DIR"},
+				Value:   "/tmp/gzcaas/metadata",
+			},
+			&cli.StringFlag{
 				Name:    "workdir",
 				Usage:   "specify command workdir",
 				Aliases: []string{"w"},
 				EnvVars: []string{"CAAS_WORKDIR"},
-				Value:   "/tmp/gzcaas",
+				Value:   "/tmp/gzcaas/workdir",
 			},
 			&cli.StringFlag{
 				Name:    "environment",
@@ -80,6 +86,10 @@ func RegistryServer(app *cli.MultipleProgram) {
 
 			if ctx.String("shell") != "" {
 				cfg.Shell = ctx.String("shell")
+			}
+
+			if ctx.String("metadata-dir") != "" {
+				cfg.MetadataDir = ctx.String("metadata-dir")
 			}
 
 			if ctx.String("workdir") != "" {
