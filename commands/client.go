@@ -59,6 +59,11 @@ func RegistryClient(app *cli.MultipleProgram) {
 				Usage:   "specify job id",
 				EnvVars: []string{"CAAS_JOB_ID"},
 			},
+			&cli.StringFlag{
+				Name:    "workdir-base",
+				Usage:   "specify workdir base, which to run workdir = workdirbase + id",
+				EnvVars: []string{"CAAS_WORKDIR_BASE"},
+			},
 		},
 		Action: func(ctx *cli.Context) (err error) {
 			cfg := &client.Config{}
@@ -172,6 +177,7 @@ func RegistryClient(app *cli.MultipleProgram) {
 				ID:          ctx.String("job-id"),
 				Script:      script,
 				Environment: environment,
+				WorkDirBase: ctx.String("workdir-base"),
 			})
 			if errx, ok := err.(*client.ExitError); ok {
 				os.Exit(errx.ExitCode)
