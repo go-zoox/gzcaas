@@ -167,6 +167,9 @@ func RegistryClient(app *cli.MultipleProgram) {
 				return fmt.Errorf("script is required")
 			}
 
+			cfg.Stdout = os.Stdout
+			cfg.Stderr = os.Stdout
+
 			c := client.New(cfg)
 			if err := c.Connect(); err != nil {
 				logger.Debugf("failed to connect to server: %s", err)
