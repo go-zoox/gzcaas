@@ -55,6 +55,12 @@ func RegistryClient(app *cli.MultipleProgram) {
 				EnvVars: []string{"CAAS_ENV_FILE"},
 			},
 			&cli.StringFlag{
+				Name:    "user",
+				Usage:   "specify command user",
+				Aliases: []string{"u"},
+				EnvVars: []string{"CAAS_USER"},
+			},
+			&cli.StringFlag{
 				Name:    "job-id",
 				Usage:   "specify job id",
 				EnvVars: []string{"CAAS_JOB_ID"},
@@ -181,6 +187,8 @@ func RegistryClient(app *cli.MultipleProgram) {
 				Script:      script,
 				Environment: environment,
 				WorkDirBase: ctx.String("workdir-base"),
+				//
+				User: ctx.String("user"),
 			})
 			if errx, ok := err.(*client.ExitError); ok {
 				os.Exit(errx.ExitCode)
