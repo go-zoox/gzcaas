@@ -78,7 +78,7 @@ func RegistryServer(app *cli.MultipleProgram) {
 				Name:    "enable-terminal",
 				Usage:   "Enable terminal, default: false",
 				EnvVars: []string{"CAAS_ENABLE_TERMINAL"},
-				Value:   false,
+				Value:   true,
 			},
 			&cli.StringFlag{
 				Name:    "terminal-path",
@@ -89,7 +89,7 @@ func RegistryServer(app *cli.MultipleProgram) {
 			&cli.StringFlag{
 				Name:    "terminal-shell",
 				Usage:   "specify terminal shell",
-				EnvVars: []string{"CAAS_TERMINAL_SHELL"},
+				EnvVars: []string{"CAAS_TERMINAL_SHELL", "SHELL"},
 			},
 			&cli.StringFlag{
 				Name:    "terminal-container",
