@@ -73,6 +73,39 @@ func RegistryServer(app *cli.MultipleProgram) {
 				Usage:   "Auto clean user workdir, default: false",
 				EnvVars: []string{"CAAS_AUTO_CLEAN_USER_WORKDIR"},
 			},
+			// terminal
+			&cli.BoolFlag{
+				Name:    "enable-terminal",
+				Usage:   "Enable terminal, default: false",
+				EnvVars: []string{"CAAS_ENABLE_TERMINAL"},
+				Value:   false,
+			},
+			&cli.StringFlag{
+				Name:    "terminal-path",
+				Usage:   "specify terminal path",
+				EnvVars: []string{"CAAS_TERMINAL_PATH"},
+				Value:   "/terminal",
+			},
+			&cli.StringFlag{
+				Name:    "terminal-shell",
+				Usage:   "specify terminal shell",
+				EnvVars: []string{"CAAS_TERMINAL_SHELL"},
+			},
+			&cli.StringFlag{
+				Name:    "terminal-container",
+				Usage:   "specify terminal container",
+				EnvVars: []string{"CAAS_TERMINAL_CONTAINER"},
+			},
+			&cli.StringFlag{
+				Name:    "terminal-container-image",
+				Usage:   "specify terminal container image",
+				EnvVars: []string{"CAAS_TERMINAL_CONTAINER_IMAGE"},
+			},
+			&cli.StringFlag{
+				Name:    "terminal-init-command",
+				Usage:   "specify terminal init command",
+				EnvVars: []string{"CAAS_TERMINAL_INIT_COMMAND"},
+			},
 		},
 		Action: func(ctx *cli.Context) (err error) {
 			cfg := &server.Config{}
@@ -110,6 +143,30 @@ func RegistryServer(app *cli.MultipleProgram) {
 
 			if ctx.Bool("auto-clean-workdir") {
 				cfg.IsAutoCleanWorkDir = ctx.Bool("auto-clean-workdir")
+			}
+
+			if ctx.Bool("enable-terminal") {
+				cfg.TerminalEnabled = ctx.Bool("enable-terminal")
+			}
+
+			if ctx.String("terminal-path") != "" {
+				cfg.TerminalPath = ctx.String("terminal-path")
+			}
+
+			if ctx.String("terminal-shell") != "" {
+				cfg.TerminalShell = ctx.String("terminal-shell")
+			}
+
+			if ctx.String("terminal-container") != "" {
+				cfg.TerminalContainer = ctx.String("terminal-container")
+			}
+
+			if ctx.String("terminal-container-image") != "" {
+				cfg.TerminalContainerImage = ctx.String("terminal-container-image")
+			}
+
+			if ctx.String("terminal-init-command") != "" {
+				cfg.TerminalInitCommand = ctx.String("terminal-init-command")
 			}
 
 			if cfg.Port == 0 {
