@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/go-zoox/cli v1.3.2
-	github.com/go-zoox/commands-as-a-service v1.5.3
+	github.com/go-zoox/commands-as-a-service v1.5.4
 	github.com/go-zoox/core-utils v1.2.14
 	github.com/go-zoox/fetch v1.7.16
 	github.com/go-zoox/fs v1.3.13
@@ -46,16 +46,16 @@ require (
 	github.com/go-zoox/jsonrpc v1.2.2 // indirect
 	github.com/go-zoox/jwt v1.3.0 // indirect
 	github.com/go-zoox/kv v1.5.2 // indirect
-	github.com/go-zoox/proxy v1.5.2 // indirect
+	github.com/go-zoox/proxy v1.5.3 // indirect
 	github.com/go-zoox/pubsub v1.2.2 // indirect
 	github.com/go-zoox/random v1.0.4 // indirect
 	github.com/go-zoox/ratelimit v1.2.0 // indirect
 	github.com/go-zoox/safe v1.0.1 // indirect
 	github.com/go-zoox/session v1.2.0 // indirect
 	github.com/go-zoox/tag v1.2.3 // indirect
-	github.com/go-zoox/terminal v1.3.6 // indirect
+	github.com/go-zoox/terminal v1.3.8 // indirect
 	github.com/go-zoox/uuid v0.0.1 // indirect
-	github.com/go-zoox/zoox v1.12.6 // indirect
+	github.com/go-zoox/zoox v1.12.7 // indirect
 	github.com/goccy/go-yaml v1.11.0 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/google/uuid v1.3.1 // indirect
