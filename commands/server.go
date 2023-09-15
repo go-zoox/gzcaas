@@ -92,12 +92,12 @@ func RegistryServer(app *cli.MultipleProgram) {
 				EnvVars: []string{"CAAS_TERMINAL_SHELL", "SHELL"},
 			},
 			&cli.StringFlag{
-				Name:    "terminal-container",
+				Name:    "terminal-driver",
 				Usage:   "specify terminal container",
 				EnvVars: []string{"CAAS_TERMINAL_CONTAINER"},
 			},
 			&cli.StringFlag{
-				Name:    "terminal-container-image",
+				Name:    "terminal-driver-image",
 				Usage:   "specify terminal container image",
 				EnvVars: []string{"CAAS_TERMINAL_CONTAINER_IMAGE"},
 			},
@@ -157,12 +157,12 @@ func RegistryServer(app *cli.MultipleProgram) {
 				cfg.TerminalShell = ctx.String("terminal-shell")
 			}
 
-			if ctx.String("terminal-container") != "" {
-				cfg.TerminalContainer = ctx.String("terminal-container")
+			if ctx.String("terminal-driver") != "" {
+				cfg.TerminalDriver = ctx.String("terminal-driver")
 			}
 
-			if ctx.String("terminal-container-image") != "" {
-				cfg.TerminalContainerImage = ctx.String("terminal-container-image")
+			if ctx.String("terminal-driver-image") != "" {
+				cfg.TerminalDriverImage = ctx.String("terminal-driver-image")
 			}
 
 			if ctx.String("terminal-init-command") != "" {
