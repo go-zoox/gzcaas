@@ -1,4 +1,4 @@
-name: Release Docker Image - DIND
+name: Release Docker Image - dind
 
 on:
   push:
@@ -58,6 +58,7 @@ jobs:
         uses: zmicro-design/action-docker-image-meta@v1
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
+          suffix: dind
 
       - name: Show Docker Tags
         run: |
