@@ -100,7 +100,7 @@ func RegistryClient(app *cli.MultipleProgram) {
 				cfg.Server = fmt.Sprintf("%s:8838", cfg.Server)
 			}
 
-			if !regexp.Match("^ws://[^:]+:\\d+", cfg.Server) {
+			if !regexp.Match("^wss?://[^:]+:\\d+", cfg.Server) {
 				return fmt.Errorf("invalid gzcaas server: %s", cfg.Server)
 			}
 
