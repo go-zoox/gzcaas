@@ -92,12 +92,12 @@ func RegistryClient(app *cli.MultipleProgram) {
 			// add scheme
 			if !regexp.Match("^wss?://", cfg.Server) {
 				cfg.Server = fmt.Sprintf("ws://%s", cfg.Server)
-			}
 
-			// add port
-			if !regexp.Match(":\\d+$", cfg.Server) {
-				// host:port
-				cfg.Server = fmt.Sprintf("%s:8838", cfg.Server)
+				// add port
+				if !regexp.Match(":\\d+$", cfg.Server) {
+					// host:port
+					cfg.Server = fmt.Sprintf("%s:8838", cfg.Server)
+				}
 			}
 
 			if !regexp.Match("^wss?://[^:]+:\\d+", cfg.Server) {
