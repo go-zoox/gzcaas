@@ -32,6 +32,8 @@ LABEL org.opencontainers.image.source="https://github.com/go-zoox/gzcaas"
 
 ARG VERSION=latest
 
+RUN zmicro update -a
+
 RUN zmicro plugin install eunomia
 
 ENV MODE=production
