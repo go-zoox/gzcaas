@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/go-zoox/cli v1.3.8
-	github.com/go-zoox/commands-as-a-service v1.7.1
+	github.com/go-zoox/commands-as-a-service v1.7.2
 	github.com/go-zoox/core-utils v1.3.5
 	github.com/go-zoox/fetch v1.8.1
 	github.com/go-zoox/fs v1.3.14
