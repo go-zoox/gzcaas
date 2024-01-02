@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/go-zoox/cli v1.3.8
-	github.com/go-zoox/commands-as-a-service v1.7.3
+	github.com/go-zoox/commands-as-a-service v1.7.4
 	github.com/go-zoox/core-utils v1.3.5
 	github.com/go-zoox/fetch v1.8.1
 	github.com/go-zoox/fs v1.3.14
@@ -43,7 +43,7 @@ require (
 	github.com/go-zoox/dotenv v1.2.5 // indirect
 	github.com/go-zoox/encoding v1.2.1 // indirect
 	github.com/go-zoox/errors v1.0.2 // indirect
-	github.com/go-zoox/eventemitter v1.0.9 // indirect
+	github.com/go-zoox/eventemitter v1.2.0 // indirect
 	github.com/go-zoox/gzip v1.0.0 // indirect
 	github.com/go-zoox/headers v1.0.8 // indirect
 	github.com/go-zoox/i18n v1.0.3 // indirect
@@ -60,10 +60,10 @@ require (
 	github.com/go-zoox/safe v1.0.1 // indirect
 	github.com/go-zoox/session v1.2.0 // indirect
 	github.com/go-zoox/tag v1.2.6 // indirect
-	github.com/go-zoox/terminal v1.6.5 // indirect
+	github.com/go-zoox/terminal v1.6.7 // indirect
 	github.com/go-zoox/uuid v0.0.1 // indirect
-	github.com/go-zoox/websocket v0.0.8 // indirect
-	github.com/go-zoox/zoox v1.13.3 // indirect
+	github.com/go-zoox/websocket v0.0.9 // indirect
+	github.com/go-zoox/zoox v1.13.4 // indirect
 	github.com/goccy/go-yaml v1.11.2 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/google/uuid v1.5.0 // indirect
@@ -102,3 +102,5 @@ require (
 // replace github.com/go-zoox/commands-as-a-service => ../commands-as-a-service
 
 // replace github.com/go-zoox/websocket => ../websocket
+
+// replace github.com/go-zoox/eventemitter => ../eventemitter
