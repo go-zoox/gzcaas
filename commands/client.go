@@ -5,9 +5,9 @@ import (
 	"os"
 	"strings"
 
+	"github.com/go-idp/agent/client"
+	"github.com/go-idp/agent/entities"
 	"github.com/go-zoox/cli"
-	"github.com/go-zoox/commands-as-a-service/client"
-	"github.com/go-zoox/commands-as-a-service/entities"
 	"github.com/go-zoox/core-utils/regexp"
 	"github.com/go-zoox/fetch"
 	"github.com/go-zoox/fs"
@@ -17,7 +17,7 @@ import (
 func RegistryClient(app *cli.MultipleProgram) {
 	app.Register("client", &cli.Command{
 		Name:  "client",
-		Usage: "commands as a service client",
+		Usage: "agent client",
 		Flags: []cli.Flag{
 			&cli.StringFlag{
 				Name:    "server",
