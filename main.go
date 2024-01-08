@@ -1,8 +1,8 @@
 package main
 
 import (
+	"github.com/go-idp/agent/cmd/agent/commands"
 	"github.com/go-zoox/cli"
-	"github.com/go-zoox/gzcaas/commands"
 )
 
 func main() {
