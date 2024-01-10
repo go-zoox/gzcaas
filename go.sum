@@ -43,8 +43,8 @@ github.com/fsnotify/fsnotify v1.7.0 h1:8JEhPFa5W2WU7YfeZzPNqzMP6Lwt7L2715Ggo0nos
 github.com/fsnotify/fsnotify v1.7.0/go.mod h1:40Bi/Hjc2AVfZrqy+aj+yEI+/bRxZnMJyTJwOpGvigM=
 github.com/go-errors/errors v1.5.1 h1:ZwEMSLRCapFLflTpT7NKaAc7ukJ8ZPEjzlxt8rPN8bk=
 github.com/go-errors/errors v1.5.1/go.mod h1:sIVyrIiJhuEF+Pj9Ebtd6P/rEYROXFi3BopGUQ5a5Og=
-github.com/go-idp/agent v1.0.8 h1:PYrur2vu8PUe2E2Y1d4i1NJZTJGLKOqIHok8uu7eUbY=
-github.com/go-idp/agent v1.0.8/go.mod h1:dXQaXEr10CpUCvKElx3bR4aU8vUqVQVeMNxHCcbrzsk=
+github.com/go-idp/agent v1.0.11 h1:Jy9gY6WAfv7kXFBAJ8RkUA9DN8jtboAF42D9zyfZKCM=
+github.com/go-idp/agent v1.0.11/go.mod h1:1pd41Y0+MMumLeMBwMBaUcuxnx58sOa0KAbjgofPLLA=
 github.com/go-playground/assert/v2 v2.0.1/go.mod h1:VDjEfimB/XKnb+ZQfWdccd7VUvScMdVu0Titje2rxJ4=
 github.com/go-playground/locales v0.13.0/go.mod h1:taPMhCMXrRLJO55olJkUXHZBHCxTMfnGwq/HNwmWNS8=
 github.com/go-playground/locales v0.14.0 h1:u50s323jtVGugKlcYeyzC0etD1HifMjqmJqb8WugfUU=
@@ -107,8 +107,8 @@ github.com/go-zoox/encoding v1.2.1 h1:38rQRsfL1f1YHZaqsPaGcNMkPnzatnPlYiHioUh9F4
 github.com/go-zoox/encoding v1.2.1/go.mod h1:NdcM7Ln73oVW3vJgx3MH4fJknCcdQfq+NgJ0tuCo7tU=
 github.com/go-zoox/errors v1.0.2 h1:1NLMoEVlDU1+qrvvPj+rrJXOvQPdeZ3DekVBFrI5PFY=
 github.com/go-zoox/errors v1.0.2/go.mod h1:HJ5NKQb9cu3IbI0Jayw7xZiblLBEIglpaIOMxvQnWnk=
-github.com/go-zoox/eventemitter v1.3.1 h1:u514R8WrFYmWUbxL4xrJR6U6Ps/PgxShMFIkGaAFUsk=
-github.com/go-zoox/eventemitter v1.3.1/go.mod h1:XgyFxOZyk4RKhmFN6FVzkFbA6Lw9khGSN8BjPB909dA=
+github.com/go-zoox/eventemitter v1.3.3 h1:yoqb27z8fwr7oSjCnFmPA01XyfC2dO3YpMpv3E7hmH4=
+github.com/go-zoox/eventemitter v1.3.3/go.mod h1:XgyFxOZyk4RKhmFN6FVzkFbA6Lw9khGSN8BjPB909dA=
 github.com/go-zoox/fetch v1.3.5/go.mod h1:AkS6v/DlotjmUs+7qJsoFGFkpROr9LVtiKYb000v3Kw=
 github.com/go-zoox/fetch v1.4.4/go.mod h1:WExVnds3HZ1A6jJu9KuqtICfkJpvUdR4uONUnw9TG+0=
 github.com/go-zoox/fetch v1.8.1 h1:Zh2yW/loXSoSebKZ1UkKKMpH/E51HtFb9L0zpr+2R2I=
@@ -167,8 +167,8 @@ github.com/go-zoox/terminal v1.6.8/go.mod h1:itFNNMXKuNOntS+Mttd9pH/iJj7pRecet/M
 github.com/go-zoox/testify v1.0.2 h1:G5sQ3xm0uwCuytnMhgnqZ5BItCt2DN3n2wLBqlIJEWA=
 github.com/go-zoox/uuid v0.0.1 h1:txqmDavRTq68gzzqWfJQLorFyUp9a7M2lmq2KcwPGPA=
 github.com/go-zoox/uuid v0.0.1/go.mod h1:0/F4LdfLqFdyqOf7aXoiYXRkXHU324JQ5DZEytXYBPM=
-github.com/go-zoox/websocket v0.1.0 h1:fFUeCBn1EGMGzV5WvesQdi4e6vBhZXf9hF5qn8I+azc=
-github.com/go-zoox/websocket v0.1.0/go.mod h1:Td5S9SVgAd3xsC++/QsJFP1o7rxHIrDhwoHRmkz7CvE=
+github.com/go-zoox/websocket v0.1.3 h1:c3cVjhaB/Y67WVxbM22cugkr7/NzVTVJCLC8AmTKKIU=
+github.com/go-zoox/websocket v0.1.3/go.mod h1:qW6/2pTGULPjqB8z0ZGE7uJ3jGN7KFAGwKVsDLIhG/A=
 github.com/go-zoox/zoox v1.2.19/go.mod h1:xk3S3L58ugJIDyuZMCYrj3qIGLSxddbkARwTRkpxPVE=
 github.com/go-zoox/zoox v1.13.4 h1:6/MOqqzP9E42UN6t/Up3L38PDd9MeMMIwIIA6OnuY4U=
 github.com/go-zoox/zoox v1.13.4/go.mod h1:2IXnuIXgcb54fsXYaIRaRIXR9sd6ZA9Ty7Zqpv/bYcc=
