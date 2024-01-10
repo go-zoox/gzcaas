@@ -30,17 +30,13 @@ LABEL MAINTAINER="Zero<tobewhatwewant@gmail.com>"
 
 LABEL org.opencontainers.image.source="https://github.com/go-zoox/gzcaas"
 
-ARG VERSION=latest
-
-ENV GZCAAS_VERSION=${VERSION}
+COPY --from=builder /build/gzcaas /bin
 
 RUN zmicro update -a
 
 RUN zmicro plugin install eunomia
 
-COPY --from=builder /build/gzcaas /bin
-
-RUN gzcaas --version
+ENV MODE=production
 
 EXPOSE 8838
 
