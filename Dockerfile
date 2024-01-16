@@ -36,6 +36,8 @@ RUN zmicro update -a
 
 RUN zmicro plugin install eunomia
 
+RUN zmicro package install rsync
+
 ENV MODE=production
 
 CMD gzcaas server
