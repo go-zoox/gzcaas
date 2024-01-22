@@ -3,7 +3,7 @@ module github.com/go-zoox/gzcaas
 go 1.20
 
 require (
-	github.com/go-idp/agent v1.2.1
+	github.com/go-idp/agent v1.2.2
 	github.com/go-zoox/cli v1.3.8
 )
 
@@ -64,7 +64,7 @@ require (
 	github.com/go-zoox/tag v1.2.6 // indirect
 	github.com/go-zoox/terminal v1.6.11 // indirect
 	github.com/go-zoox/uuid v0.0.1 // indirect
-	github.com/go-zoox/websocket v1.0.3 // indirect
+	github.com/go-zoox/websocket v1.0.5 // indirect
 	github.com/go-zoox/zoox v1.13.8 // indirect
 	github.com/goccy/go-yaml v1.11.2 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
