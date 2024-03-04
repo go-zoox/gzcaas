@@ -26,6 +26,8 @@ RUN CGO_ENABLED=0 \
 # Server
 FROM whatwewant/dind:v24-1
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 LABEL MAINTAINER="Zero<tobewhatwewant@gmail.com>"
 
 LABEL org.opencontainers.image.source="https://github.com/go-zoox/gzcaas"
