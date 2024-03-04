@@ -1,7 +1,10 @@
 services:
   app:
-    build:
-      context: .
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile.dind
+    image: whatwewant/gzcaas:v1-dind
     ports:
-      - 0.0.0.0:6666:6666
-    # command: sleep infinity
+      - 0.0.0.0:8838:8838
+    privileged: true
+    

@@ -30,16 +30,18 @@ LABEL MAINTAINER="Zero<tobewhatwewant@gmail.com>"
 
 LABEL org.opencontainers.image.source="https://github.com/go-zoox/gzcaas"
 
-COPY --from=builder /build/gzcaas /bin
-
-RUN zmicro update -a
+RUN zmicro update -a && apt update -y
 
 RUN zmicro plugin install eunomia
 
 RUN zmicro package install rsync
 
+RUN zmicro package install ossfs
+
 ENV MODE=production
 
 EXPOSE 8838
+
+COPY --from=builder /build/gzcaas /bin
 
 CMD gzcaas server

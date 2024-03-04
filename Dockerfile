@@ -24,20 +24,22 @@ RUN CGO_ENABLED=0 \
   -v -o gzcaas
 
 # Server
-FROM whatwewant/alpine:v3.17-1
+FROM whatwewant/zmicro:v1.24
 
 LABEL MAINTAINER="Zero<tobewhatwewant@gmail.com>"
 
 LABEL org.opencontainers.image.source="https://github.com/go-zoox/gzcaas"
 
-COPY --from=builder /build/gzcaas /bin
-
-RUN zmicro update -a
+RUN zmicro update -a && apt update -y
 
 RUN zmicro plugin install eunomia
 
 RUN zmicro package install rsync
 
+RUN zmicro package install ossfs
+
 ENV MODE=production
+
+COPY --from=builder /build/gzcaas /bin
 
 CMD gzcaas server
