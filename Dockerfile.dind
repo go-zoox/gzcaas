@@ -26,8 +26,6 @@ RUN CGO_ENABLED=0 \
 # Server
 FROM whatwewant/dind:v24-1
 
-ARG DEBIAN_FRONTEND=noninteractive
-
 LABEL MAINTAINER="Zero<tobewhatwewant@gmail.com>"
 
 LABEL org.opencontainers.image.source="https://github.com/go-zoox/gzcaas"
@@ -38,7 +36,7 @@ RUN zmicro plugin install eunomia
 
 RUN zmicro package install rsync
 
-RUN zmicro package install ossfs
+RUN DEBIAN_FRONTEND=noninteractive TZ=Asia/Shanghai zmicro package install ossfs
 
 ENV MODE=production
 
