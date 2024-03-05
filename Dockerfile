@@ -40,6 +40,8 @@ RUN zmicro package install ossfs
 
 ENV MODE=production
 
+COPY entrypoint.sh /entrypoint.sh
+
 COPY --from=builder /build/gzcaas /bin
 
-CMD gzcaas server
+CMD /entrypoint.sh

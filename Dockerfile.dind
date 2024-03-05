@@ -42,6 +42,8 @@ ENV MODE=production
 
 EXPOSE 8838
 
+COPY entrypoint.sh /entrypoint.sh
+
 COPY --from=builder /build/gzcaas /bin
 
-CMD gzcaas server
+CMD /entrypoint.sh
