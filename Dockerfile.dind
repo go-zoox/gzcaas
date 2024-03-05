@@ -38,6 +38,8 @@ RUN zmicro package install rsync
 
 RUN DEBIAN_FRONTEND=noninteractive TZ=Asia/Shanghai zmicro package install ossfs
 
+RUN zmicro fn pm::npm i -g zx
+
 ENV MODE=production
 
 EXPOSE 8838
