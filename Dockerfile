@@ -32,8 +32,6 @@ LABEL org.opencontainers.image.source="https://github.com/go-zoox/gzcaas"
 
 RUN zmicro update -a && apt update -y
 
-RUN zmicro plugin install eunomia
-
 RUN zmicro package install rsync
 
 RUN zmicro package install ossfs
@@ -41,6 +39,8 @@ RUN zmicro package install ossfs
 # RUN zmicro fn pm::npm i -g zx
 
 ENV MODE=production
+
+RUN zmicro plugin install eunomia@v1.20.1
 
 COPY entrypoint.sh /entrypoint.sh
 
