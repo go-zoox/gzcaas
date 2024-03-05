@@ -38,7 +38,7 @@ RUN zmicro package install rsync
 
 RUN zmicro package install ossfs
 
-RUN zmicro fn pm::npm i -g zx
+# RUN zmicro fn pm::npm i -g zx
 
 ENV MODE=production
 
