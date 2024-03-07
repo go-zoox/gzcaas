@@ -17,8 +17,13 @@ function start_oss_service() {
   local exports_dir="$PLUGIN_EUNOMIA_EXPORT_DIST"
   mkdir -p $exports_dir
 
-  log::info "[$(timestamp)] mounting oss bucket ${OSS_BUCKET} to ${exports_dir} ..."
-  ossfs -o nonempty ${OSS_BUCKET}:/data/idp/agent/exports $exports_dir
+  if [ -n "${OSS_REGION}" ]; then
+    log::info "[$(timestamp)] mounting oss bucket ${OSS_BUCKET} to ${exports_dir} with region(${OSS_REGION}) ..."
+    ossfs -o nonempty -o url=https://${OSS_REGION}.aliyuncs.com ${OSS_BUCKET}:/data/idp/agent/exports $exports_dir
+  else
+    log::info "[$(timestamp)] mounting oss bucket ${OSS_BUCKET} to ${exports_dir} ..."
+    ossfs -o nonempty ${OSS_BUCKET}:/data/idp/agent/exports $exports_dir
+  fi
 }
 
 function preload_docker_images() {
