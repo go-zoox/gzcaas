@@ -40,7 +40,7 @@ RUN zmicro package install ossfs
 
 ENV MODE=production
 
-RUN zmicro plugin install eunomia@v1.20.2
+RUN zmicro plugin install eunomia@v1.20.3
 
 COPY entrypoint.sh /entrypoint.sh
 
