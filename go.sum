@@ -49,8 +49,8 @@ github.com/getsentry/sentry-go v0.27.0 h1:Pv98CIbtB3LkMWmXi4Joa5OOcwbmnX88sF5qbK
 github.com/getsentry/sentry-go v0.27.0/go.mod h1:lc76E2QywIyW8WuBnwl8Lc4bkmQH4+w1gwTf25trprY=
 github.com/go-errors/errors v1.5.1 h1:ZwEMSLRCapFLflTpT7NKaAc7ukJ8ZPEjzlxt8rPN8bk=
 github.com/go-errors/errors v1.5.1/go.mod h1:sIVyrIiJhuEF+Pj9Ebtd6P/rEYROXFi3BopGUQ5a5Og=
-github.com/go-idp/agent v1.4.0 h1:r1Z6pJuoGqXGJ+47BoUK675s1ZXDYTqkZXLf70YNe2k=
-github.com/go-idp/agent v1.4.0/go.mod h1:+pt4eazXatDi3r2r2AY0pRAm6zTgohwF3KRRt3PewD8=
+github.com/go-idp/agent v1.4.1 h1:W457fBYZ3EfnlOsQddwuiMh+Q7F6knTHKWYydR+jPyA=
+github.com/go-idp/agent v1.4.1/go.mod h1:NqfNwxsqxxCD0NSRVeDCkmvsttxdraLbDZOh1tcK5RI=
 github.com/go-logr/logr v1.2.2/go.mod h1:jdQByPbusPIv2/zmleS9BjJVeZ6kBagPoEUsqbVz/1A=
 github.com/go-logr/logr v1.4.1 h1:pKouT5E8xu9zeFC39JXRDukb6JFQPXM5p5I91188VAQ=
 github.com/go-logr/logr v1.4.1/go.mod h1:9T104GzyrTigFIr8wt5mBrctHMim0Nb2HLGrmQ40KvY=
@@ -92,8 +92,8 @@ github.com/go-zoox/cookie v1.2.0/go.mod h1:+xEawxty0L+z+4EIvTF2AaHUkUM7oIecGZ9Xr
 github.com/go-zoox/core-utils v1.0.4/go.mod h1:EknM3KLL6/kagL95wZbWE7mRRcYCG/fHqiJ/EH0ihAs=
 github.com/go-zoox/core-utils v1.0.12/go.mod h1:EknM3KLL6/kagL95wZbWE7mRRcYCG/fHqiJ/EH0ihAs=
 github.com/go-zoox/core-utils v1.0.13/go.mod h1:EknM3KLL6/kagL95wZbWE7mRRcYCG/fHqiJ/EH0ihAs=
-github.com/go-zoox/core-utils v1.3.9 h1:kjCKhHi/87/V3+jvJbdJptGswn0nZ74dSM08R/DHzd0=
-github.com/go-zoox/core-utils v1.3.9/go.mod h1:raOOwr2l2sJQyjR0Dg33sg0ry4U1/L2eNTuLFRpUXWs=
+github.com/go-zoox/core-utils v1.3.10 h1:DrfGc10hOtWkElPsLO1CB+f1DycHWx0UGLgWe9awywU=
+github.com/go-zoox/core-utils v1.3.10/go.mod h1:raOOwr2l2sJQyjR0Dg33sg0ry4U1/L2eNTuLFRpUXWs=
 github.com/go-zoox/counter v1.0.1/go.mod h1:PICilZTrnO4dFstDPlXpjc6sdWYBG7hm/XDmjAcHaX0=
 github.com/go-zoox/counter v1.2.1 h1:MPShpjJWQ/qt3pYQxuyBL/Ci6X4mtihTC3cwDr1VOI8=
 github.com/go-zoox/counter v1.2.1/go.mod h1:gOA/Bk2iWt9K4vm2Std2ciEgHwQqWSzvcyUI+jFVduY=
