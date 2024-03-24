@@ -3,7 +3,7 @@ module github.com/go-zoox/gzcaas
 go 1.20
 
 require (
-	github.com/go-idp/agent v1.4.1
+	github.com/go-idp/agent v1.4.2
 	github.com/go-zoox/cli v1.3.8
 )
 
@@ -36,11 +36,11 @@ require (
 	github.com/go-zoox/concurrency v1.2.0 // indirect
 	github.com/go-zoox/config v1.2.10 // indirect
 	github.com/go-zoox/cookie v1.2.0 // indirect
-	github.com/go-zoox/core-utils v1.3.10 // indirect
+	github.com/go-zoox/core-utils v1.4.4 // indirect
 	github.com/go-zoox/counter v1.2.1 // indirect
 	github.com/go-zoox/cron v1.2.1 // indirect
 	github.com/go-zoox/crypto v1.1.8 // indirect
-	github.com/go-zoox/datetime v1.3.0 // indirect
+	github.com/go-zoox/datetime v1.3.1 // indirect
 	github.com/go-zoox/debug v1.0.5 // indirect
 	github.com/go-zoox/dotenv v1.2.5 // indirect
 	github.com/go-zoox/encoding v1.2.1 // indirect
@@ -67,8 +67,8 @@ require (
 	github.com/go-zoox/tag v1.2.6 // indirect
 	github.com/go-zoox/terminal v1.6.11 // indirect
 	github.com/go-zoox/uuid v0.0.1 // indirect
-	github.com/go-zoox/websocket v1.0.5 // indirect
-	github.com/go-zoox/zoox v1.14.24 // indirect
+	github.com/go-zoox/websocket v1.0.6 // indirect
+	github.com/go-zoox/zoox v1.14.25 // indirect
 	github.com/goccy/go-yaml v1.11.3 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/google/uuid v1.6.0 // indirect
