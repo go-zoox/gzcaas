@@ -42,7 +42,7 @@ ENV MODE=production
 
 EXPOSE 8838
 
-RUN zmicro plugin install eunomia@v1.20.14
+RUN zmicro plugin install eunomia@v1.20.17
 
 COPY entrypoint.sh /entrypoint.sh
 
