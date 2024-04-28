@@ -46,4 +46,6 @@ COPY entrypoint.sh /entrypoint.sh
 
 COPY --from=builder /build/gzcaas /bin
 
-CMD /entrypoint.sh
+# CMD /entrypoint.sh
+
+CMD gzcaas server
