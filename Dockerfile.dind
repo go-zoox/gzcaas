@@ -30,11 +30,17 @@ LABEL MAINTAINER="Zero<tobewhatwewant@gmail.com>"
 
 LABEL org.opencontainers.image.source="https://github.com/go-zoox/gzcaas"
 
+ENV DEBIAN_FRONTEND=noninteractive 
+
 RUN zmicro update -a && apt update -y
 
 RUN zmicro package install rsync
 
 RUN DEBIAN_FRONTEND=noninteractive TZ=Asia/Shanghai zmicro package install ossfs
+
+RUN zmicro package install kubectl
+
+RUN zmicro package install helm
 
 RUN zmicro fn pm::npm i -g zx
 

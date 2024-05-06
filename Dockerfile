@@ -36,6 +36,10 @@ RUN zmicro package install rsync
 
 RUN zmicro package install ossfs
 
+RUN zmicro package install kubectl
+
+RUN zmicro package install helm
+
 # RUN zmicro fn pm::npm i -g zx
 
 ENV MODE=production
