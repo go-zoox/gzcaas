@@ -3,7 +3,7 @@ module github.com/go-zoox/gzcaas
 go 1.22.1
 
 require (
-	github.com/go-idp/agent v1.5.4
+	github.com/go-idp/agent v1.5.5
 	github.com/go-zoox/cli v1.4.0
 )
 
@@ -118,6 +118,6 @@ require (
 
 // replace github.com/go-idp/agent => ../../go-idp/agent
 
-// replace github.com/go-zoox/zoox => ../zoox
+// replace github.com/go-zoox/tag => ../tag
 
 // replace github.com/go-zoox/eventemitter => ../eventemitter
