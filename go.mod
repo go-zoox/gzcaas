@@ -3,7 +3,7 @@ module github.com/go-zoox/gzcaas
 go 1.22.1
 
 require (
-	github.com/go-idp/agent v1.5.9
+	github.com/go-idp/agent v1.5.10
 	github.com/go-zoox/cli v1.4.0
 )
 
