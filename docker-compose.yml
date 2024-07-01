@@ -6,5 +6,15 @@ services:
     image: whatwewant/gzcaas:v1-dind
     ports:
       - 0.0.0.0:8838:8838
+    volumes:
+      - ./entrypoint.sh:/entrypoint.sh
+    environment:
+      # LOG_LEVEL: debug
+      ENABLE_DOCKER_BUILDX: ${ENABLE_DOCKER_BUILDX:-true}
+      DOCKER_BUILDER_PLATFORM: ${SERVICE_DOCKER_BUILDER_PLATFORM:-linux/amd64,linux/arm64}
+      #
+      CAAS_SERVER_URL: http://127.0.0.1:8080
+      CAAS_CLIENT_ID: aaa
+      CAAS_CLIENT_SECRET: bbb
     privileged: true
     
