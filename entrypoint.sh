@@ -156,6 +156,7 @@ EOF
   # @TODO env not work in /usr/local/bin/startup.sh
   export ENABLE_DOCKER_BUILDX=${ENABLE_DOCKER_BUILDX:-true}
   export DOCKER_BUILDER_PLATFORM=${SERVICE_DOCKER_BUILDER_PLATFORM:-linux/amd64,linux/arm64}
+  export DOCKER_BUILDER_IMAGE=${DOCKER_BUILDER_IMAGE}
   #
   /usr/local/bin/startup.sh
   if [ $? -ne 0 ]; then
