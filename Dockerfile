@@ -50,9 +50,8 @@ COPY entrypoint.sh /entrypoint.sh
 
 COPY --from=builder /build/gzcaas /bin
 
-# CMD /entrypoint.sh
-
 # Remove the origin entrypoint
-ENTRYPOINT []
+# ENTRYPOINT []
+# CMD /entrypoint.sh
 
 CMD gzcaas server
