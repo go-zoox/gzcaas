@@ -8,13 +8,11 @@ services:
       - 0.0.0.0:8838:8838
     volumes:
       - ./entrypoint.sh:/entrypoint.sh
+    entrypoint: []
     environment:
-      # LOG_LEVEL: debug
-      ENABLE_DOCKER_BUILDX: ${ENABLE_DOCKER_BUILDX:-true}
-      DOCKER_BUILDER_PLATFORM: ${SERVICE_DOCKER_BUILDER_PLATFORM:-linux/amd64,linux/arm64}
       #
-      CAAS_SERVER_URL: http://127.0.0.1:8080
-      CAAS_CLIENT_ID: aaa
-      CAAS_CLIENT_SECRET: bbb
+      CAAS_SERVER_URL: http://10.208.203.172:8080
+      CAAS_CLIENT_ID: 48540daa2a8eeca6188be94b
+      CAAS_CLIENT_SECRET: 4a0a35b0dc2a17c8310758b66bcd7257
     privileged: true
     

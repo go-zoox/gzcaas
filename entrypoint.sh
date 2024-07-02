@@ -69,10 +69,15 @@ function config_git() {
   fi
   export GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no"
 
-  git clone $EUNOMIA_DOCKERFILES_GIT_REPO $PLUGIN_EUNOMIA_DOCKERFILES_PATH
-  if [ $? -ne 0 ]; then
-    log::error "[$(timestamp)] failed to clone git repo ${EUNOMIA_DOCKERFILES_GIT_REPO}."
-    return 1
+  if [ ! -d "$PLUGIN_EUNOMIA_DOCKERFILES_PATH" ]; then
+    git clone $EUNOMIA_DOCKERFILES_GIT_REPO $PLUGIN_EUNOMIA_DOCKERFILES_PATH
+    if [ $? -ne 0 ]; then
+      log::error "[$(timestamp)] failed to clone git repo ${EUNOMIA_DOCKERFILES_GIT_REPO}."
+      return 1
+    fi
+  else
+    cd $PLUGIN_EUNOMIA_DOCKERFILES_PATH
+    git pull origin master
   fi
 
   log::success "[$(timestamp)] succeed to config git."
@@ -145,6 +150,17 @@ EOF
       log::info "[$(timestamp)] preload docker image: ${image} ..."
       docker pull $image &>/dev/null
     done
+  fi
+
+  log::info "[$(timestamp)] starting docker daemon ..."
+  # @TODO env not work in /usr/local/bin/startup.sh
+  export ENABLE_DOCKER_BUILDX=${ENABLE_DOCKER_BUILDX:-true}
+  export DOCKER_BUILDER_PLATFORM=${SERVICE_DOCKER_BUILDER_PLATFORM:-linux/amd64,linux/arm64}
+  #
+  /usr/local/bin/startup.sh
+  if [ $? -ne 0 ]; then
+    log::error "[$(timestamp)] failed to start docker."
+    return 1
   fi
 
   log::success "[$(timestamp)] succeed to config docker."
