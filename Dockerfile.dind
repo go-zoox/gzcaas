@@ -57,4 +57,6 @@ COPY --from=builder /build/gzcaas /bin
 # Remove the origin entrypoint
 ENTRYPOINT []
 
+ENV TZ=Asia/Shanghai HOME=/root
+
 CMD /entrypoint.sh

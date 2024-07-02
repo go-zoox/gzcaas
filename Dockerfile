@@ -54,4 +54,6 @@ COPY --from=builder /build/gzcaas /bin
 # ENTRYPOINT []
 # CMD /entrypoint.sh
 
+ENV TZ=Asia/Shanghai HOME=/root
+
 CMD gzcaas server
