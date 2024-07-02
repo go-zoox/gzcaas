@@ -193,6 +193,13 @@ EUNOMIA_AUTO_TEST_SERVER=${EUNOMIA_AUTO_TEST_SERVER}
 EUNOMIA_DOCKER_BUILDX_BUILDER=${EUNOMIA_DOCKER_BUILDX_BUILDER}
 EOF
 
+  log::info "[$(timestamp)] start to config eunomia crontab ..."
+  zmicro cron create clean 0 0 _ _ _/7 zmicro eunomia schedule clean
+  if [ $? -ne 0 ]; then
+    log::error "[$(timestamp)] failed to config eunomia crontab."
+    return 1
+  fi
+
   log::success "[$(timestamp)] succeed to config eunomia."
 }
 
