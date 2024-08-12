@@ -44,7 +44,7 @@ RUN zmicro package install helm
 
 ENV MODE=production
 
-RUN zmicro plugin install eunomia@v1.20.40
+RUN zmicro plugin install eunomia@v1.20.42
 
 COPY entrypoint.sh /entrypoint.sh
 
