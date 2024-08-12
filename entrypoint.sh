@@ -218,6 +218,11 @@ function auto_run_scripts_before_start() {
 
 function run_gzcaas() {
   log::info "[$(timestamp)] running gzcaas ..."
+
+  # @TODO make gzcaas server env works
+  # source $DOTENV_FILE
+  config::export $DOTENV_FILE
+  #
   gzcaas server
 }
 
