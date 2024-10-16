@@ -60,24 +60,22 @@ function config_git() {
     log::error "[$(timestamp)] GIT_CREDENTIALS is required."
     return 1
   fi
-  echo "$GIT_CREDENTIALS" >/root/.git-credentials
+  echo -e "$GIT_CREDENTIALS" >/root/.git-credentials
 
   #
-  if [ -z "$EUNOMIA_DOCKERFILES_GIT_REPO" ]; then
-    log::error "[$(timestamp)] EUNOMIA_DOCKERFILES_GIT_REPO is required."
-    return 1
-  fi
-  export GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no"
+  if [ -n "$EUNOMIA_DOCKERFILES_GIT_REPO" ]; then
+    export GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no"
 
-  if [ ! -d "$PLUGIN_EUNOMIA_DOCKERFILES_PATH" ]; then
-    git clone $EUNOMIA_DOCKERFILES_GIT_REPO $PLUGIN_EUNOMIA_DOCKERFILES_PATH
-    if [ $? -ne 0 ]; then
-      log::error "[$(timestamp)] failed to clone git repo ${EUNOMIA_DOCKERFILES_GIT_REPO}."
-      return 1
+    if [ ! -d "$PLUGIN_EUNOMIA_DOCKERFILES_PATH" ]; then
+      git clone $EUNOMIA_DOCKERFILES_GIT_REPO $PLUGIN_EUNOMIA_DOCKERFILES_PATH
+      if [ $? -ne 0 ]; then
+        log::error "[$(timestamp)] failed to clone git repo ${EUNOMIA_DOCKERFILES_GIT_REPO}."
+        return 1
+      fi
+    else
+      cd $PLUGIN_EUNOMIA_DOCKERFILES_PATH
+      git pull origin master
     fi
-  else
-    cd $PLUGIN_EUNOMIA_DOCKERFILES_PATH
-    git pull origin master
   fi
 
   log::success "[$(timestamp)] succeed to config git."
@@ -122,19 +120,16 @@ function config_oss() {
 function config_docker() {
   log::info "[$(timestamp)] start to config docker ..."
 
-  if [ -z "$EUNOMIA_DOCKER_INSECURE_REGISTRY" ]; then
-    log::error "[$(timestamp)] EUNOMIA_DOCKER_INSECURE_REGISTRY is required."
-    return 1
-  fi
-
   mkdir -p /etc/docker/buildx
-  #
-  cat >/etc/docker/buildx/buildkitd.default.toml <<EOF
+
+  # config buildx
+  if [ -n "$EUNOMIA_DOCKER_INSECURE_REGISTRY" ]; then
+    cat >/etc/docker/buildx/buildkitd.default.toml <<EOF
 [registry."${EUNOMIA_DOCKER_INSECURE_REGISTRY}"]
   http = true
 EOF
-  #
-  cat >/etc/docker/daemon.json <<EOF
+    #
+    cat >/etc/docker/daemon.json <<EOF
 {
   "insecure-registries": [
     "http://${EUNOMIA_DOCKER_INSECURE_REGISTRY}"
@@ -142,6 +137,7 @@ EOF
   "experimental": true
 }
 EOF
+  fi
 
   if [ -n "$PRELOAD_DOCKER_IMAGES" ]; then
     log::info "[$(timestamp)] starting preload images ..."
@@ -169,7 +165,7 @@ EOF
 
 function config_eunomia() {
   log::info "[$(timestamp)] start to config eunomia ..."
-  
+
   cat >/configs/plugins/eunomia/config <<EOF
 PLUGIN_EUNOMIA_DOCKER_REGISTRY=${PLUGIN_EUNOMIA_DOCKER_REGISTRY}
 PLUGIN_EUNOMIA_CONFIG_CENTER=${PLUGIN_EUNOMIA_CONFIG_CENTER}
