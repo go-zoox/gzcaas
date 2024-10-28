@@ -3,7 +3,7 @@ module github.com/go-zoox/gzcaas
 go 1.22.1
 
 require (
-	github.com/go-idp/agent v1.10.0
+	github.com/go-idp/agent v1.10.1
 	github.com/go-zoox/cli v1.4.0
 )
 
@@ -25,7 +25,7 @@ require (
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/getsentry/sentry-go v0.27.0 // indirect
 	github.com/go-errors/errors v1.5.1 // indirect
-	github.com/go-idp/report v1.2.1 // indirect
+	github.com/go-idp/report v1.2.2 // indirect
 	github.com/go-logr/logr v1.4.2 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-ole/go-ole v1.3.0 // indirect
@@ -123,6 +123,8 @@ require (
 )
 
 // replace github.com/go-idp/agent => ../../go-idp/agent
+
+// replace github.com/go-idp/report => ../../go-idp/report
 
 // replace github.com/go-zoox/tag => ../tag
 
