@@ -3,7 +3,7 @@ module github.com/go-zoox/gzcaas
 go 1.22.1
 
 require (
-	github.com/go-idp/agent v1.9.2
+	github.com/go-idp/agent v1.10.0
 	github.com/go-zoox/cli v1.4.0
 )
 
@@ -25,14 +25,14 @@ require (
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/getsentry/sentry-go v0.27.0 // indirect
 	github.com/go-errors/errors v1.5.1 // indirect
-	github.com/go-idp/pipeline v1.4.9 // indirect
+	github.com/go-idp/report v1.2.1 // indirect
 	github.com/go-logr/logr v1.4.2 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-ole/go-ole v1.3.0 // indirect
 	github.com/go-redis/redis/v8 v8.11.5 // indirect
 	github.com/go-zoox/cache v1.0.7 // indirect
 	github.com/go-zoox/chalk v1.0.2 // indirect
-	github.com/go-zoox/command v1.7.0 // indirect
+	github.com/go-zoox/command v1.8.2 // indirect
 	github.com/go-zoox/commands-as-a-service v1.7.11 // indirect
 	github.com/go-zoox/compress v1.0.1 // indirect
 	github.com/go-zoox/concurrency v1.2.0 // indirect
@@ -54,12 +54,14 @@ require (
 	github.com/go-zoox/headers v1.0.8 // indirect
 	github.com/go-zoox/i18n v1.0.3 // indirect
 	github.com/go-zoox/ini v1.0.4 // indirect
+	github.com/go-zoox/ip v1.0.2 // indirect
 	github.com/go-zoox/jobqueue v1.0.1 // indirect
 	github.com/go-zoox/jsonrpc v1.2.2 // indirect
 	github.com/go-zoox/jwt v1.4.0 // indirect
 	github.com/go-zoox/kv v1.5.9 // indirect
 	github.com/go-zoox/logger v1.6.2 // indirect
 	github.com/go-zoox/mq v1.0.1 // indirect
+	github.com/go-zoox/once v0.0.4 // indirect
 	github.com/go-zoox/proxy v1.5.6 // indirect
 	github.com/go-zoox/pubsub v1.2.3 // indirect
 	github.com/go-zoox/random v1.0.4 // indirect
@@ -77,6 +79,7 @@ require (
 	github.com/gorilla/websocket v1.5.3 // indirect
 	github.com/joho/godotenv v1.5.1 // indirect
 	github.com/kardianos/osext v0.0.0-20190222173326-2bc1f35cddc0 // indirect
+	github.com/klauspost/cpuid/v2 v2.2.8 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/matttproud/golang_protobuf_extensions/v2 v2.0.0 // indirect
