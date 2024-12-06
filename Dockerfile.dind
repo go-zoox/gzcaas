@@ -42,6 +42,8 @@ RUN zmicro package install kubectl
 
 RUN zmicro package install helm
 
+RUN zmicro package install pipeline
+
 RUN zmicro fn pm::npm i -g zx
 
 ENV MODE=production
