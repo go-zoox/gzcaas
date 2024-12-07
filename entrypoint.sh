@@ -56,11 +56,9 @@ function config_git() {
   log::info "[$(timestamp)] start to config git ..."
 
   #
-  if [ -z "$GIT_CREDENTIALS" ]; then
-    log::error "[$(timestamp)] GIT_CREDENTIALS is required."
-    return 1
+  if [ -n "$GIT_CREDENTIALS" ]; then
+    echo -e "$GIT_CREDENTIALS" | base64 -d >/root/.git-credentials
   fi
-  echo -e "$GIT_CREDENTIALS" >/root/.git-credentials
 
   #
   if [ -n "$EUNOMIA_DOCKERFILES_GIT_REPO" ]; then
@@ -119,6 +117,15 @@ function config_oss() {
 
 function config_docker() {
   log::info "[$(timestamp)] start to config docker ..."
+
+  #
+  if [ -n "$DOCKER_CREDENTIALS" ]; then
+    if [ ! -d "/root/.docker" ]; then
+      mkdir -p /root/.docker
+    fi
+
+    echo -e "$DOCKER_CREDENTIALS" | base64 -d >/root/.docker/config.json
+  fi
 
   mkdir -p /etc/docker/buildx
 
