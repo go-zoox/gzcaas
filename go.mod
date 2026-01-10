@@ -3,7 +3,7 @@ module github.com/go-zoox/gzcaas
 go 1.22.1
 
 require (
-	github.com/go-idp/agent v1.10.1
+	github.com/go-idp/agent v1.12.2
 	github.com/go-zoox/cli v1.4.0
 )
 
@@ -25,7 +25,7 @@ require (
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/getsentry/sentry-go v0.27.0 // indirect
 	github.com/go-errors/errors v1.5.1 // indirect
-	github.com/go-idp/report v1.2.2 // indirect
+	github.com/go-idp/report v1.2.4 // indirect
 	github.com/go-logr/logr v1.4.2 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-ole/go-ole v1.3.0 // indirect
@@ -59,7 +59,7 @@ require (
 	github.com/go-zoox/jsonrpc v1.2.2 // indirect
 	github.com/go-zoox/jwt v1.4.0 // indirect
 	github.com/go-zoox/kv v1.5.9 // indirect
-	github.com/go-zoox/logger v1.6.2 // indirect
+	github.com/go-zoox/logger v1.6.3 // indirect
 	github.com/go-zoox/mq v1.0.1 // indirect
 	github.com/go-zoox/once v0.0.4 // indirect
 	github.com/go-zoox/proxy v1.5.6 // indirect
@@ -69,10 +69,10 @@ require (
 	github.com/go-zoox/safe v1.2.0 // indirect
 	github.com/go-zoox/session v1.2.0 // indirect
 	github.com/go-zoox/tag v1.3.4 // indirect
-	github.com/go-zoox/terminal v1.9.0 // indirect
+	github.com/go-zoox/terminal v1.9.1 // indirect
 	github.com/go-zoox/uuid v0.0.1 // indirect
 	github.com/go-zoox/websocket v1.3.5 // indirect
-	github.com/go-zoox/zoox v1.15.17 // indirect
+	github.com/go-zoox/zoox v1.16.2 // indirect
 	github.com/goccy/go-yaml v1.12.0 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/google/uuid v1.6.0 // indirect

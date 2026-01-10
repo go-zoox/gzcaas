@@ -56,10 +56,10 @@ github.com/getsentry/sentry-go v0.27.0 h1:Pv98CIbtB3LkMWmXi4Joa5OOcwbmnX88sF5qbK
 github.com/getsentry/sentry-go v0.27.0/go.mod h1:lc76E2QywIyW8WuBnwl8Lc4bkmQH4+w1gwTf25trprY=
 github.com/go-errors/errors v1.5.1 h1:ZwEMSLRCapFLflTpT7NKaAc7ukJ8ZPEjzlxt8rPN8bk=
 github.com/go-errors/errors v1.5.1/go.mod h1:sIVyrIiJhuEF+Pj9Ebtd6P/rEYROXFi3BopGUQ5a5Og=
-github.com/go-idp/agent v1.10.1 h1:B6m1lW9vMIlNc+5X9Ukhky/+Gjx8fQJldjAJfjuvnUs=
-github.com/go-idp/agent v1.10.1/go.mod h1:+lXdcvOPjgjRI9v2ck1/y9WWW7dxWt0UBc8WEFLN0VM=
-github.com/go-idp/report v1.2.2 h1:QYgC0fIv4rxdRTe4bhLiqYpm/N030ge9X9DYdL8DgqM=
-github.com/go-idp/report v1.2.2/go.mod h1:klpL4N4lb2hQJj42bCruyJMaWfCWk9nrSl8O7c33fQo=
+github.com/go-idp/agent v1.12.2 h1:3wySTtAsCU08csn16uyC+2J15QEk2alZPT0x2Ignxws=
+github.com/go-idp/agent v1.12.2/go.mod h1:Kc3hRHF9AYlyBgbS9uXYW9J1iQEfvzsPn35++NV0/7g=
+github.com/go-idp/report v1.2.4 h1:0Wg3evB7C40qdE2ewxOB27GOBIEbnNgl2E2LQntreo4=
+github.com/go-idp/report v1.2.4/go.mod h1:klpL4N4lb2hQJj42bCruyJMaWfCWk9nrSl8O7c33fQo=
 github.com/go-logr/logr v1.2.2/go.mod h1:jdQByPbusPIv2/zmleS9BjJVeZ6kBagPoEUsqbVz/1A=
 github.com/go-logr/logr v1.4.2 h1:6pFjapn8bFcIbiKo3XT4j/BhANplGihG6tvd+8rYgrY=
 github.com/go-logr/logr v1.4.2/go.mod h1:9T104GzyrTigFIr8wt5mBrctHMim0Nb2HLGrmQ40KvY=
@@ -163,8 +163,8 @@ github.com/go-zoox/kv v1.4.3/go.mod h1:hRCBcPBHilKmeSEsn4o67LBaXurX0+m3Tq9Ec4aIR
 github.com/go-zoox/kv v1.5.9 h1:xEjIRJVcwIg2PhO0ZL+KWR5mCI/f5VshmcOjZPd4FRA=
 github.com/go-zoox/kv v1.5.9/go.mod h1:sD2FmWrme1gzWaLciBAPyK0BtW3BluM02UGskOqf2MA=
 github.com/go-zoox/logger v1.2.0/go.mod h1:mBImRV6zpbGtiIjDz/C9vWi80wWc2OTOl9N9P0SAJgk=
-github.com/go-zoox/logger v1.6.2 h1:rRm/kuZ2vwbtJ0JhiDbaLLnjfdM43njqQ7MtSHhTjLg=
-github.com/go-zoox/logger v1.6.2/go.mod h1:o7ddvv/gMoMa0TomPhHoIz11ZWRbQ92pF6rwYbOY3iQ=
+github.com/go-zoox/logger v1.6.3 h1:gx3pnRTKBCFEePescaz6nNmSxH19Lj7Lf94FtAuKc1A=
+github.com/go-zoox/logger v1.6.3/go.mod h1:o7ddvv/gMoMa0TomPhHoIz11ZWRbQ92pF6rwYbOY3iQ=
 github.com/go-zoox/mq v1.0.1 h1:JZSgWfp4JJDVKN8FgUkWWNDb3HOhV15dIdi+ecZENwQ=
 github.com/go-zoox/mq v1.0.1/go.mod h1:0Zhgww1wcFNC37NJZjtumai03MvBAZuQ4VhezcAiFJE=
 github.com/go-zoox/once v0.0.4 h1:SFhHyHTDQGgjZyI3qS3HHRQQRxuMZY6p5rWkVRpzzeg=
@@ -190,8 +190,8 @@ github.com/go-zoox/tag v1.0.9/go.mod h1:jrbJgC1dZAN5+vZlmrUKu1/UpbOo0xVyCC1MfLpG
 github.com/go-zoox/tag v1.1.0/go.mod h1:yMB7bMseqbOshUW9O9Dqfq0C7Mmy9OkccV/meEJHICs=
 github.com/go-zoox/tag v1.3.4 h1:VJt9T4bbaz3nfpjW+K24DYawim46LqfAAR8rwoQO0yg=
 github.com/go-zoox/tag v1.3.4/go.mod h1:I0ZCDrMDK6muFrHFNb6Tw5hKQ7ivaXAnMcKAVpRfCwI=
-github.com/go-zoox/terminal v1.9.0 h1:wcBV3SCl/q5HrD+5p0wNIDe1Edt5ahHunGl2FkmAXtI=
-github.com/go-zoox/terminal v1.9.0/go.mod h1:/jsnE8ugvAF4VMqW33EM8nDUxPkGEQ7q6U3Qu7lDG4k=
+github.com/go-zoox/terminal v1.9.1 h1:mo/NOezhASpO32tLZqZpS5+DzkXPeuvkR3kXepJl7tY=
+github.com/go-zoox/terminal v1.9.1/go.mod h1:/jsnE8ugvAF4VMqW33EM8nDUxPkGEQ7q6U3Qu7lDG4k=
 github.com/go-zoox/testify v1.0.2 h1:G5sQ3xm0uwCuytnMhgnqZ5BItCt2DN3n2wLBqlIJEWA=
 github.com/go-zoox/testify v1.0.2/go.mod h1:L35iVL6xDKDL/TQOTRWyNL4H4nm8bzs6nde5XA7PYnY=
 github.com/go-zoox/uuid v0.0.1 h1:txqmDavRTq68gzzqWfJQLorFyUp9a7M2lmq2KcwPGPA=
@@ -199,8 +199,8 @@ github.com/go-zoox/uuid v0.0.1/go.mod h1:0/F4LdfLqFdyqOf7aXoiYXRkXHU324JQ5DZEytX
 github.com/go-zoox/websocket v1.3.5 h1:+puemx88m6Phi9Q4FzaZcqaElK5iTx0m4okFpyxKE+k=
 github.com/go-zoox/websocket v1.3.5/go.mod h1:rIYK7JAkzehFe0c8Ozw+WoUuM24uKV7Viyksi+mYnlo=
 github.com/go-zoox/zoox v1.2.19/go.mod h1:xk3S3L58ugJIDyuZMCYrj3qIGLSxddbkARwTRkpxPVE=
-github.com/go-zoox/zoox v1.15.17 h1:hr1ZoMY1dN3PZiZUktHerhHXktuf3UEKXhGD8MHll/0=
-github.com/go-zoox/zoox v1.15.17/go.mod h1:ErD8up7AuL7Jx1vQD7vwFLcdflvgDhHGPhHuIt14/Rs=
+github.com/go-zoox/zoox v1.16.2 h1:ltnt7sy/HyWwdZie76OLEr5wxBxGePJYYMOWmU9bdC8=
+github.com/go-zoox/zoox v1.16.2/go.mod h1:/hon/h1LThmprct0YPSgYejmQVGcj24/fyOgpOuci/A=
 github.com/goccy/go-yaml v1.9.5/go.mod h1:U/jl18uSupI5rdI2jmuCswEA2htH9eXfferR3KfscvA=
 github.com/goccy/go-yaml v1.12.0 h1:/1WHjnMsI1dlIBQutrvSMGZRQufVO3asrHfTwfACoPM=
 github.com/goccy/go-yaml v1.12.0/go.mod h1:wKnAMd44+9JAAnGQpWVEgBzGt3YuTaQ4uXoHvE4m7WU=
