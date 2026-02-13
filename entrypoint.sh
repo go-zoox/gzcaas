@@ -230,40 +230,40 @@ function run_gzcaas() {
 }
 
 function main() {
-  # 1. load config
-  load_config
-  if [ $? -ne 0 ]; then
-    log::error "[$(timestamp)] failed to load config."
-    return 1
-  fi
+  # # 1. load config
+  # load_config
+  # if [ $? -ne 0 ]; then
+  #   log::error "[$(timestamp)] failed to load config."
+  #   return 1
+  # fi
 
-  # 2. config git
-  config_git
-  if [ $? -ne 0 ]; then
-    log::error "[$(timestamp)] failed to config git."
-    return 1
-  fi
+  # # 2. config git
+  # config_git
+  # if [ $? -ne 0 ]; then
+  #   log::error "[$(timestamp)] failed to config git."
+  #   return 1
+  # fi
 
-  # 3. config oss
-  config_oss
-  if [ $? -ne 0 ]; then
-    log::error "[$(timestamp)] failed to config oss."
-    return 1
-  fi
+  # # 3. config oss
+  # config_oss
+  # if [ $? -ne 0 ]; then
+  #   log::error "[$(timestamp)] failed to config oss."
+  #   return 1
+  # fi
 
-  # 4. config docker
-  config_docker
-  if [ $? -ne 0 ]; then
-    log::error "[$(timestamp)] failed to config docker."
-    return 1
-  fi
+  # # 4. config docker
+  # config_docker
+  # if [ $? -ne 0 ]; then
+  #   log::error "[$(timestamp)] failed to config docker."
+  #   return 1
+  # fi
 
-  # 5. config eunomia
-  config_eunomia
-  if [ $? -ne 0 ]; then
-    log::error "[$(timestamp)] failed to config eunomia."
-    return 1
-  fi
+  # # 5. config eunomia
+  # config_eunomia
+  # if [ $? -ne 0 ]; then
+  #   log::error "[$(timestamp)] failed to config eunomia."
+  #   return 1
+  # fi
 
   # 6. auto run scripts before start
   auto_run_scripts_before_start
