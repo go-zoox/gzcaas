@@ -4,7 +4,7 @@ mkdir -p /etc/gzcaas
 
 export PLUGIN_EUNOMIA_EXPORT_DIST=/data/plugins/eunomia/exports
 export PLUGIN_EUNOMIA_DOCKERFILES_PATH=/usr/local/lib/zmicro/plugins/eunomia/config/dockerfiles
-export DOTENV_FILE=/etc/gzcaas/.env
+# export DOTENV_FILE=/etc/gzcaas/.env
 
 function load_config() {
   log::info "[$(timestamp)] start to load config ..."
@@ -224,7 +224,7 @@ function run_gzcaas() {
 
   # @TODO make gzcaas server env works
   # source $DOTENV_FILE
-  config::export $DOTENV_FILE
+  # config::export $DOTENV_FILE
   #
   gzcaas server
 }
