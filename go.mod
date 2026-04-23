@@ -3,8 +3,8 @@ module github.com/go-zoox/gzcaas
 go 1.22.1
 
 require (
-	github.com/go-idp/agent v1.14.0
-	github.com/go-zoox/cli v1.4.0
+	github.com/go-idp/agent v1.15.1
+	github.com/go-zoox/cli v1.5.1
 )
 
 require (
@@ -36,7 +36,7 @@ require (
 	github.com/go-zoox/commands-as-a-service v1.7.11 // indirect
 	github.com/go-zoox/compress v1.0.1 // indirect
 	github.com/go-zoox/concurrency v1.2.0 // indirect
-	github.com/go-zoox/config v1.3.0 // indirect
+	github.com/go-zoox/config v1.4.0 // indirect
 	github.com/go-zoox/cookie v1.2.0 // indirect
 	github.com/go-zoox/core-utils v1.4.11 // indirect
 	github.com/go-zoox/counter v1.2.1 // indirect
@@ -104,7 +104,7 @@ require (
 	github.com/tidwall/gjson v1.17.3 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
 	github.com/tidwall/pretty v1.2.1 // indirect
-	github.com/urfave/cli/v2 v2.27.2 // indirect
+	github.com/urfave/cli/v2 v2.27.4 // indirect
 	github.com/xrash/smetrics v0.0.0-20240521201337-686a1a2994c1 // indirect
 	github.com/yusufpapurcu/wmi v1.2.4 // indirect
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.55.0 // indirect
