@@ -32,7 +32,9 @@ LABEL org.opencontainers.image.source="https://github.com/go-zoox/gzcaas"
 
 ENV DEBIAN_FRONTEND=noninteractive 
 
-RUN zmicro update -a && apt update -y
+RUN zmicro update -a \
+  && apt update -y \
+  && apt install -y jq lftp curl git
 
 RUN zmicro package install rsync
 
@@ -52,7 +54,7 @@ EXPOSE 8838
 
 RUN zmicro plugin install eunomia@v1.20.42
 
-COPY entrypoint.sh /entrypoint.sh
+COPY entrypoint.dind.sh /entrypoint.sh
 
 COPY --from=builder /build/gzcaas /bin
 
