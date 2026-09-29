@@ -56,8 +56,8 @@ github.com/getsentry/sentry-go v0.27.0 h1:Pv98CIbtB3LkMWmXi4Joa5OOcwbmnX88sF5qbK
 github.com/getsentry/sentry-go v0.27.0/go.mod h1:lc76E2QywIyW8WuBnwl8Lc4bkmQH4+w1gwTf25trprY=
 github.com/go-errors/errors v1.5.1 h1:ZwEMSLRCapFLflTpT7NKaAc7ukJ8ZPEjzlxt8rPN8bk=
 github.com/go-errors/errors v1.5.1/go.mod h1:sIVyrIiJhuEF+Pj9Ebtd6P/rEYROXFi3BopGUQ5a5Og=
-github.com/go-idp/agent v1.15.1 h1:jO/xZUSmxsdlf3sQx5fOQTKfGHQjB8ZAcRH+EqHYhuM=
-github.com/go-idp/agent v1.15.1/go.mod h1:qcMV0b9yGc6j1Sod5i4tHCBGhW4Zyj4tGJDgcaZ//PQ=
+github.com/go-idp/agent v1.15.2 h1:LXLrpv9sqx8KffGpn8tEGloMh2nC9u11sqctqJp3tlM=
+github.com/go-idp/agent v1.15.2/go.mod h1:5+KDy672wrRKaEMwouNsX93m/+c8z4HTv+yKqwVU8m4=
 github.com/go-idp/report v1.2.4 h1:0Wg3evB7C40qdE2ewxOB27GOBIEbnNgl2E2LQntreo4=
 github.com/go-idp/report v1.2.4/go.mod h1:klpL4N4lb2hQJj42bCruyJMaWfCWk9nrSl8O7c33fQo=
 github.com/go-logr/logr v1.2.2/go.mod h1:jdQByPbusPIv2/zmleS9BjJVeZ6kBagPoEUsqbVz/1A=
@@ -196,8 +196,8 @@ github.com/go-zoox/testify v1.0.2 h1:G5sQ3xm0uwCuytnMhgnqZ5BItCt2DN3n2wLBqlIJEWA
 github.com/go-zoox/testify v1.0.2/go.mod h1:L35iVL6xDKDL/TQOTRWyNL4H4nm8bzs6nde5XA7PYnY=
 github.com/go-zoox/uuid v0.0.1 h1:txqmDavRTq68gzzqWfJQLorFyUp9a7M2lmq2KcwPGPA=
 github.com/go-zoox/uuid v0.0.1/go.mod h1:0/F4LdfLqFdyqOf7aXoiYXRkXHU324JQ5DZEytXYBPM=
-github.com/go-zoox/websocket v1.3.5 h1:+puemx88m6Phi9Q4FzaZcqaElK5iTx0m4okFpyxKE+k=
-github.com/go-zoox/websocket v1.3.5/go.mod h1:rIYK7JAkzehFe0c8Ozw+WoUuM24uKV7Viyksi+mYnlo=
+github.com/go-zoox/websocket v1.3.6 h1:84MKyL8r8oimVHXBCJKtx8Mz+1b5WaVaU8sT/y41RwY=
+github.com/go-zoox/websocket v1.3.6/go.mod h1:rIYK7JAkzehFe0c8Ozw+WoUuM24uKV7Viyksi+mYnlo=
 github.com/go-zoox/zoox v1.2.19/go.mod h1:xk3S3L58ugJIDyuZMCYrj3qIGLSxddbkARwTRkpxPVE=
 github.com/go-zoox/zoox v1.16.2 h1:ltnt7sy/HyWwdZie76OLEr5wxBxGePJYYMOWmU9bdC8=
 github.com/go-zoox/zoox v1.16.2/go.mod h1:/hon/h1LThmprct0YPSgYejmQVGcj24/fyOgpOuci/A=
